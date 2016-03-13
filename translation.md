@@ -1,35 +1,58 @@
 Study of HTML5 WebSocket for a Multimedia Communication
-HTML5 WebSoket应用在多媒体通信领域的研究
 
-Jin-tae Park, Hyun-seo Hwang, Jun-soo Yun and Il-young Moon
-School of Computer Science and Engineering,
-Korea University of Technology and Education.
-计算机科学与工程学院，高丽大学教育技术与教育。
+HTML5 WebSoket应用在多媒体通信领域的研究
+ 
+Jin-tae Park, Hyun-seo Hwang, Jun-soo Yun and Il-young Moon 
+
+School of Computer Science and Engineering,Korea University of Technology and Education.
+
+计算机科学与工程学院，韩国技术教育大学。
+
 {wlsxo05, smilebear1, yuntn55, iymoon}@koreatech.ac.kr
 
 Abstract
-摘要
+
+    摘要
+
 Recently, with the advent HTML5, the performance of Web service has improved. 
-最年来，随着HTML5的出现，网络服务的性能有了提高。
+
+最年来，随着HTML5的出现，web服务的性能得到了改善。
+
 It was difficult to configure the web services using only HTML. 
-仅使用HTML去搭建web服务是困难的。
+
+仅使用HTML去配置web服务是困难的。
+
 However, communication between the client and the server is now possible because of HTML5. 
-然而，因为HTML5的出现，在客户端和服务器端的通信是可能的。
+
+然而，因为HTML5的出现，在客户端和服务器端的通信现在是可能的。
+
 HTML5 was designed to be platform independent, and can be used on an increasing number of mobile devices for creating both mobile websites and mobile applications. 
-HTML5被设计成一个独立的平台，可以应用在越来越多的移动设备去创建移动网站和移动应用。
+
+HTML5是平台独立的，并且可以在越来越多的移动设备上用于创建移动网站和移动应用程序。。
+
 It is frequently cited as the primary solution for enabling effective cross-platform deployment onto various smart devices.
-它经常被引为实现有效的跨平台部署到各种智能设备的主要解决方案。
+
+它经常被作为主要的解决方案可以有效的跨平台部署到各种智能设备上。
+
 HTML5 has many new features. One of the most powerful features is the WebSocket.
-HTML5有很多新的功能。 最强大的功能之一是WebSocket。
+HTML5有许多新特性。最强大的功能之一是WebSocket。
+
 Updated HTML5 specifications for web sockets, web browsers, and web servers allow sending and receiving data in real time, via an always-on TCP connection. 
-最新的HTML5 Web Sockets规范，Web浏览器和Web服务器允许发送和接收实时数据，通过一个TCP
-长连接。
+
+更新规范的HTML5 web sockets、web浏览器和web服务器允许发送和接收实时数据,通过不间断的TCP连接。
+
 The crucial differences between pre-HTML5 communication methods and HTML5 WebSocket are located in the new HTML5 protocol. 
-之前html5通信方法和HTML5 WebSocket之间的关键差异是在于新的HTML5协议的出现。
+
+之前html5通信方法和HTML5 WebSocket之间的关键差异是在于WebSocket采用了新的HTML5协议（WebSocket protocol）。
+
 WebSocket protocol uses HTTP to establish a connection, but the subsequent communication is performed by the WebSocket reader protocol. 
+
 WebSocket协议采用HTTP建立连接，但随后的通信是通过WebSocket协议执行器。
+
 In addition, the feature header is very small, resulting in reduced communication overhead. 
+
 此外，特征头是非常小的，从而导致减少通信开销。
+
 The WebSocket aims to solve the problems of the conventional communication method, though it has several restrictions. 
 WebSocket旨在解决传统通信方式的问题，尽管它有一些限制。
 Therefore, in this study, experiments were conducted to measure the
@@ -38,7 +61,7 @@ performance analysis of WebSocket.
 We conclude by presenting the direction of future research in this field.
 我们的结论是在这一领域的未来研究的方向。
 Keywords: HTML5, WebSocket, Cross-Browser, Multi-media, Polling
-关键词：HTML5, WebSocket, Cross-Browser, Multi-media, Polling
+关键词：HTML5, WebSocket, Cross-Browser, Multi-media, Polling（轮询）
 1. Introduction
 1. 引言
 HTML5 has attracted significant attention in the recent years.
@@ -66,7 +89,6 @@ timeframe, 71% of mobile developers responded that they had used the Android
 development platform while 57% responded that they had used iOS. These results
 demonstrate that utilization of the HTML5 development platform is increasing relative
 to Android and iOS. Figure 1 displays a graph of platform utilization ratio trends.
-
 
 
 
