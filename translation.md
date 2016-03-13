@@ -12,7 +12,7 @@ School of Computer Science and Engineering,Korea University of Technology and Ed
 
 Abstract
 
-    摘要
+摘要
 
 Recently, with the advent HTML5, the performance of Web service has improved. 
 
@@ -51,19 +51,27 @@ WebSocket协议采用HTTP建立连接，但随后的通信是通过WebSocket协�
 
 In addition, the feature header is very small, resulting in reduced communication overhead. 
 
-此外，特征头是非常小的，从而导致减少通信开销。
+此外，特征头是非常小的，从而减少通信开销。
 
 The WebSocket aims to solve the problems of the conventional communication method, though it has several restrictions. 
+
 WebSocket旨在解决传统通信方式的问题，尽管它有一些限制。
-Therefore, in this study, experiments were conducted to measure the
-performance analysis of WebSocket. 
+
+Therefore, in this study, experiments were conducted to measure the performance analysis of WebSocket. 
+
 因此，在这项研究中，进行了实验测量WebSocket的性能分析。
+
 We conclude by presenting the direction of future research in this field.
-我们的结论是在这一领域的未来研究的方向。
+
+最后，我们提出在这一领域的未来研究的方向。
+
 Keywords: HTML5, WebSocket, Cross-Browser, Multi-media, Polling
-关键词：HTML5, WebSocket, Cross-Browser, Multi-media, Polling（轮询）
+
+关键词：HTML5, WebSocket, Cross-Browser（跨浏览器）, Multi-media（多媒体）, Polling（轮询）
+
 1. Introduction
 1. 引言
+
 HTML5 has attracted significant attention in the recent years.
 HTML5已经在最近几年引起了人们极大的关注。
 HTML5 is the nextgeneration standard proposed in HTML [1]. 
