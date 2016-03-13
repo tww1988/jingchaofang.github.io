@@ -1,6 +1,6 @@
 Study of HTML5 WebSocket for a Multimedia Communication
 
-HTML5 WebSoket应用在多媒体通信领域的研究
+    HTML5 WebSoket应用在多媒体通信领域的研究
  
 Jin-tae Park, Hyun-seo Hwang, Jun-soo Yun and Il-young Moon 
 
