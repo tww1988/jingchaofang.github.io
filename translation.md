@@ -468,12 +468,13 @@ The following assumptions are made:
 
 
     下面的假设：
-        * WebSocket技术是必需。
-        * 实时双向数据通信是必需的。
-        * 有很多并发连接。
-        * 要使用基于浏览器的TCP通信。
-        * 开发人员需要使用易于使用的API的原因。
-        * 为了扩展SOA超越如云环境和网络。
+    
+* WebSocket技术是必需。
+* 实时双向数据通信是必需的。
+* 有很多并发连接。
+* 要使用基于浏览器的TCP通信。
+* 开发人员需要使用易于使用的API的原因。
+* 为了扩展SOA超越如云环境和网络。
 
 Therefore, in this paper, our experimental design functions through the polling conventional manner with real-time two-way data communication using the WebSocket methodology through the transfer delay time. 
 
@@ -676,57 +677,110 @@ In this paper, a comparison was made between the overhead and response time of t
 
 Currently, not all HTML5 functions work across browsers. 
 
+    目前，并非所有的HTML5功能的跨浏览器。
+
 For example, WebStorage is a new feature in HTML5 that provides a function similar to cookies, but allows more advanced data storage on the client.
+
+    例如，WebStorage是一个新的功能在HTML5提供了一个功能类似于cookies，但允许更先进的数据存储在客户端。
 
 However, because different browsers store data in different repositories, data access cannot be performed where compatibility is an issue. 
 
+    然而，因为不同的浏览器在不同的存储库中存储数据，在兼容性问题是一个问题的情况下，不能进行数据访问。
+
 This was subjected to cross-browser tests using the two methods, in order to solve this problem.
+
+    这是进行跨浏览器测试使用的2种方法，以解决这个问题。
 
 * Save each to each Browser
 If an inspection has not been performed to determine whether a cookie is present in each browser, use cookie as the recording method.
 
+
+* 保存每一个浏览器
+如果未执行检查以确定每一个浏览器中是否存在一个cookie，则使用cookie作为记录方法。
+
 * Shared Flash Object
 Use the Shared Object for shared data storage, for client-side Flash presentation.
 
+* 共享闪存对象
+使用共享对象共享数据存储，用于客户端的闪存演示。
+
 The next figure displays an information screen indicating that you are logged into Chrome for either of the previous methods, and is recognized by IE.
+
+    下图显示一个信息屏幕提示您登录到Chrome或者以前的方法，是公认的IE浏览器。
 
 [](figure8.png)
 
 Figure 8. Cross-Browser compared with Two Browsers
 
-5. Conclusion
+    图8 两个浏览器的跨浏览器比较
+
+5.Conclusion
+
+    5.结论
 
 Interest in the new Web Of Things (WoT) standard is rapidly increasing. 
 
+    对新物联网标准的关注正在迅速增加。
+
 Specific interest in this proposed standard, which connects large numbers of devices together using the web, will continue to increase, thus increasing interest in HTML5. 
+
+    该标准的具体关注，是将大量使用网络的设备连接在一起，并且将继续增加，从而增加对HTML5的关注。
 
 In such a situation, with the advent of HTML5, we are able to provide better service, which is significantly faster than the existing Web services. 
 
+    在这样的形势下，随着HTML5的出现，我们能够提供更好的服务，这是比现有的Web服务的速度明显。
+
 HTML5 uses an open Web standard as a Web application platform and is a next-generation productivity improvement for Web development, which works together to create a better user experience.
+
+    HTML5的作为一个Web应用平台使用开放的Web标准，是新一代网络发展的生产力提升，一起创造一个更好的用户体验。
 
 HTML5 is a concept that includes a JavaScript API extension for CSS3, the web style sheet language.
 
+    HTML5是一个概念，包括JavaScript API扩展和网页的样式表语言CSS3。
+
 CSS3 is capable of providing a representation that is consistent with different browsers, in a convenient and effective manner. 
+    
+    CSS3可以通过方便和有效的方式使不同的浏览器表现一致。
 
 The JavaScript API allows the development of local applications, and can control the various resources and rich features. 
 
+    JavaScript API允许本地应用的发展，并能控制各种资源和丰富的功能。
+
 This includes WebStorage, WebWorker, WebSocket, and the GeolocationAPI.
+
+    这包括WebStorage，webworker，WebSocket，和geolocationapi。
 
 The function of WebSocket technology is to improve performance.
 
+    WebSocket技术功能是提高性能。
+
 This reduces the network load when compared to conventional methods. 
 
+    它减少了网络负载时相比，传统的方法。
+    
 The WebSocket technology is often used when real-time two-way data communication is required. 
+
+    WebSocket技术经常用于实时双向数据通信是必需的。
 
 In particular, the positive effects of using the WebSocket technology are more pronounced while using web applications based on real-time two-way data communication. 
 
+    特别是，使用WebSocket技术的积极影响更为明显，当使用在基于实时双向数据通信网络中的应用。
+
 On the other hand, not many browsers that support HTML5 support web sockets. 
+
+    另一方面，不是许多浏览器支持HTML5的Web Sockets。
 
 Further, if security is enabled while using a web socket, it proves to be disadvantageous. 
 
+    此外，如果在使用网络套接字时启用安全性，则证明是不利的。
+
 Currently, technical research is actively promoted for using WebSocket technology to improve its performance. 
 
+    目前，技术的研究是积极推动使用WebSocket技术以提高其性能。
+
 In addition, future research can be conducted to study cross-browser compatibility with WebSocket technology, and reduction of its security vulnerability can be researched.
+
+    此外，未来的研究可以进行研究跨浏览器和WebSocket技术的兼容性，以及减少其安全漏洞。
 
 Acknowledgement
 
