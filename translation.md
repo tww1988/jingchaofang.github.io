@@ -70,9 +70,9 @@ Keywords: HTML5, WebSocket, Cross-Browser, Multi-media, Polling
 
     关键词：HTML5, WebSocket, Cross-Browser（跨浏览器）, Multi-media（多媒体）, Polling（轮询）
 
-1. Introduction
-    
-    1. 引言
+1.Introduction
+
+    1.引言
 
 HTML5 has attracted significant attention in the recent years.
 
@@ -178,118 +178,222 @@ However, with changing times and with developments in the environment, the purpo
 
 In the HTML5 initiative, many specifications have been developed under the banner of the Web application environment that are not standardized and are inconsistent with the available plug-ins, which was one of its main purposes [6].
 
+    在HTML5的倡议，许多规格已经在Web应用环境不规范，与现有的插件不一致的旗帜下发展起来的，这是它的一个主要目的
+
 Among them is the specification for real-time two-way communication in a pure Web environment. 
+
+    其中之一是在一个纯网络环境中实时双向通信规范。
 
 Updated HTML5 specifications for web sockets, web browsers, and web servers allow sending and receiving data in real time, via an always-on TCP connection [7]. 
 
+    最新的HTML5规范的Web Sockets，Web浏览器和Web服务器允许发送和接收实时数据，通过一个总在运行的TCP连接。
+
 Thus, the utilization of WebSockets, enabling full-duplex communication using TCP sockets, is now possible.
+
+    因此，对WebSockets利用，使用TCP套接字实现全双工通信，现在是可能的。
 
 Instead of evolving from HTTP communication, merely using an existing web socket shows significant improvements in properties [8].
 
+    只通过使用一个现有的Web Socket显示出在性能上的显著改善，而不是通过发展HTTP通信。
+
 In particular, in the event-based Web application, which is based on real-time communication, the effect is even greater. 
+
+    特别是，在基于事件的网络应用程序，它是基于实时通信，效果更大。
 
 The HTML5 WebSocket technology may be able to receive information quickly via the push real time, and it may reduce the wait time for unnecessary network traffic. 
 
+    HTML5 WebSocket技术可以迅速接收信息通过实时推送数据,它可能会减少不必要的网络流量的等待时间。
+
 Therefore, in this paper, we conducted research on the HTML 5 WebSocket performance analysis by comparing the overhead depending on the number of concurrent users and the speed of the real-time multimedia communication.
+
+    因此,在本文中,我们在HTML5 WebSocket性能进行了研究分析，通过比较取决于并发用户的数量的开销和实时多媒体通信的速度。
 
 2.Related Technology Trends 
 
-    相关技术趋势
+    2.相关技术趋势
 
 2.1.HTML5 WebSocket Method
 
-    HTML5 WebSocket 方法
+    2.1.HTML5 WebSocket 方法
 
-As a Web application platform and a next-generation technology for productivity improvement of Web development, HTML5 is an open Web standard created to provide a better user experience. 
+As a Web application platform and a next-generation technology for productivity improvement of Web development, HTML5 is an open Web standard created to provide a better user experience.
+
+    作为一个Web应用平台和提高Web开发生产率的下一代技术，HTML5是一个开放的建立提供更好的用户体验的Web标准。
 
 It has become possible through HTML5 to provide an excellent Web service rapidly [9]. 
 
+    通过HTML5迅速提供一个优秀的Web服务已经成为可能。
+
 The function of the WebSocket technology was to improve performance. 
 
+    WebSocket技术的功能是提高性能。
+    
 Two-way data communication in real time actually corresponds to numerous concurrent connections. 
+
+    双向实时数据通信实际上相当于多个并发连接。
 
 In this case, the real-time aspects specifically, WebSocket technology is often used. 
 
+    在这种情况下，具体的实时方面，WebSocket技术是常用的。
+
 If the WebSocket technology is used, the unnecessary HTTP header data must be removed first in order to quickly send and receive pure data. 
+
+    如果应用WebSocket技术，不必要的HTTP标头的数据必须先删除为了快速发送和接收纯数据。
 
 This results in a reduction of the amount of data being transmitted and received; consequently, this reduces the load on the server and the network. 
 
+    这将导致减少所发送和接收的数据的量，因此，这减少了服务器和网络的负载。
+
 Then, using the WebSocket Secure (WSS) protocol, security was enhanced with a unique algorithm for encryption / decryption of data.
+
+    其次，使用WebSocket安全（WSS）协议、用独特的加密/解密算法将使安全增强。
 
 Figure 1 is a graph comparing the conventional communication method and new WebSocket system [10]. 
 
+    图1图中是比较传统的通信方法和新的通信系统。
+
 Thus, with the use of the WebSocket technology, connection-oriented full-duplex communication, such as TCP sockets, is possible [11].
+
+    因此，随着通信技术的应用，面向连接的全双工通信，如TCP套接字，是可能的。
 
 Using features such as these, we were able to implement more effectively the development of applications that allow chatting from the Web, real-time games, and multimedia delivery.
 
+    使用功能，如这些，我们能够更有效地实现应用程序的开发，允许网络聊天，实时游戏，多媒体传输。
+
 Table 1. Description of WebSocket Servers
+
+    表1 WebSocket服务器描述
 
 The crucial differences between pre-HTML5 communication methods and HTML5 WebSocket are located in the new HTML5 protocol. 
 
+    之前html5通信方法和HTML5 WebSocket之间的关键差异是在于WebSocket采用了新的HTML5协议（WebSocket protocol）。
+
 WebSocket protocol uses HTTP to establish a connection, but the subsequent communication is performed by the WebSocket reader protocol. 
+
+    WebSocket协议采用HTTP建立连接，但随后的通信是通过WebSocket协议执行器。
 
 In addition, the feature header is very small, resulting in reduced communication overhead. 
 
+    此外，特征头是非常小的，从而导致减少通信开销。
+
 Because a persistent connection is assumed, it is possible for clients and servers to remain in a connected state. 
+
+    因为假定一个持久连接，客户端和服务器可以保持在一个连接的状态。
 
 Accordingly, it is necessary to update existing TCP servers to meet the new WebSocket specification. 
 
+    因此，有必要更新现有的TCP服务器来满足新的WebSocket规范。
+
 WebSockets are present in a variety of servers. 
 
-These servers may be implemented in languages such as Java, Python, php, and Ruby. Table 1 provides descriptions for some selected WebSocket-enabled servers.
+    WebSockets目前在各种服务器上实现。
+
+These servers may be implemented in languages such as Java, Python, php, and Ruby. 
+
+    这些服务器可能是被诸如java、Python、PHP和Ruby语言实现的。
+    
+Table 1 provides descriptions for some selected WebSocket-enabled servers.
+
+    表1提供了一些选定的支持WebSocket的服务器。
 
 HTML5 has emerged as Server-Sent-Events (SSE) technology. 
 
+    HTML5已经成为服务器发送的事件（SSE）技术。
+
 This is a standard technique that has been proposed in HTML5 to implement server pushes in a web environment. 
+
+    这是一个标准的技术，提出了在HTML5在Web环境下实现服务器推。
 
 However, SSE can also be utilized for socket communication, rather than as an aggressive communication method from the server to the client; for example, server push is a technology commonly employed by betting websites. 
 
+    然而，SSE也可用于套接字通信，而不是作为一个从服务器到客户端的积极的通信方法，例如，服务器推是一种通常被采用在投注网站的技术。
+
 HTML5 WebSockets provides the capability for pure two-way real-time communication on the web, and does not require browser plug-ins to be installed; this differentiates it from other technologies such as Java applets and ActiveX. 
 
+    HTML5的WebSocket提供纯双向实时通信网络的能力，并且不需要安装浏览器插件；这是区别于其他技术的不同，如java applets和ActiveX控件。
+
 Figure 2 depicts an HTML5-based WebSocket system.
+
+    图2描述了一个基于HTML5的WebSocket系统。
 
 [](figure2.png)
 
 Figure 2. WebSocket Method
 
+    图2 WebSocket方法
+    
 2.2.Polling Method
 
     轮询方法
 
 In general, HTTP is a method in which the client sends a request to the server, and subsequently the server responds. 
 
+    总的来说，HTTP是一种客户端向服务器发送请求，然后服务器响应的方法。
+
 Unlike socket programming, HTTP is closer to one-way rather than two-way communication; it was not designed to enable servers to push messages to clients. 
+
+    不同于socket编程，HTTP是更接近单向而不是双向通信；它并不是设计来支持服务器推送消息给客户端。
 
 However, as web communications have gradually become more complex, various technologies to push data from the server to the client have been designed [12]. 
 
+    然而，随着网络通信逐渐变得更加复杂，各种各样的技术被设计将数据从服务器推到客户端。
+
 This led to the invention of Ajax, a periodic polling method. However, Ajax’s polling method is very inefficient, and is lacking in capability to transfer data in real time. 
+
+    这导致了Ajax技术的发明，一个周期轮询的方法。然而，AJAX的轮询方法效率很低，而且缺乏实时数据传输的能力。
 
 Therefore, several other methods began to appear, although none of them really integrated seamlessly with HTTP. 
 
+    因此，其它几种方法开始出现，虽然没有一个真正的无缝集成HTTP。
+
 One resulting method is Comet, also known as Reverse Ajax. Comet employs a long polling method, using a script tag and XHR streaming system utilizing hidden HTML IFrames.
+
+    其中一个解决方法是Comet，也被称为反向Ajax。Comet使用长轮询的方法，使用一个脚本标签和XHR流利用隐藏的HTML内嵌框架系统。
 
 Streaming is a method in which the client and server maintain a connection. 
 
+    流是客户端和服务器保持连接的一种方法。
+
 Each event represents the transmission of data to the client. 
 
+    每一个事件代表数据传输到客户端。
+
 When data is requested by the client, the server side remains connected and sends messages in succession without requiring a response. 
+    当客户端请求数据时，服务器端保持连接并不断发送消息，而不需要响应。
+
 This method does not require client requests to continue, but requires simultaneous connections, and can be adversely affected by the number of connections.
+
+    此方法不需要客户端请求继续，但需要同时连接，并且可以通过连接的数目产生不利的影响。
 
 In the long polling method, an HTTP request is sent and a response received, similar to the streaming method. 
 
+    在长轮询方法，HTTP请求发送和收到响应，类似于流的方法。
+
 However, after loading the page, it sends the request using a separate XMLHttpRequest (XHR) script; if the server does not immediately send a response to it, an event is generated on the server side [13]. 
+
+    然而，加载页面后，将请求发送使用一个单独的XMLHttpRequest（XHR）脚本；如果服务器不立即给它发送回应，在服务器端生成一个事件。
 
 A response is then transmitted to the client. 
 
+    然后将响应发送到客户端。
+
 By using this method, when an event occurs in the server, it is possible to transmit the data to the client in real time. 
+
+    通过使用这种方法，当一个事件发生在服务器，它是可能实时传输数据到客户端的。
 
 However, after sending a response, the connection between the client and the server is disconnected. 
 
+    然而，在发送一个响应之后，客户端和服务器之间的连接被中断。
+
 Figure 3 displays a comparison of Ajax, long polling, and streaming methods.
+
+    图3显示了Ajax，长轮询和流的方法的比较。
 
 [](figure3.png)
 
 Figure 3. Polling Method
+
+    图3 轮询方法
 
 2.3.Comparative Analysis of the Polling Method and WebSocket System
 
@@ -301,27 +405,49 @@ Ajax and Comet with IFrames are polling methods.
 
 That is, a polling system is used instead of a push method for receiving data. 
 
+    也就是说，一个轮询系统被用来替代一个推方法去接受数据。
+
 The server sends messages to the client, the client sends a response to the server. 
+
+    服务器发送消息到客户端，客户端发送响应到服务器。
 
 The Comet technique has generally been the best choice to stay connected to avoid repeated requests. 
 
+    Comet技术通常是保持联系的最佳选择，以避免重复的请求。
+
 It must be re-connected to close the connection after a certain time period. 
+
+    在一定时间段之后，必须重新连接关闭连接。
 
 This technique is reflected in HTML5, and was a factor leading to the design of WebSockets. 
 
+    这种技术是体现在HTML5，并且是导致WebSockets设计的一个因素。
+
 WebSocket is a protocol that provides a bidirectional connection between the web server and the client. 
+
+    WebSocket是一个协议，提供了Web服务器和客户端之间的双向连接。
 
 Unlike existing sockets, WebSocket provides actual two-way connection [14]. 
 
+    不同于现有的套接字，WebSocket可提供实际的双向连接。
+
 It begins with a HTTP-based handshake, then the WebSocket protocol takes over to facilitate communication. 
+
+    它从一个基于HTTP的握手，然后WebSocket协议接管促进沟通。
 
 Because of its more advanced design compared to existing methods such as Comet, WebSocket establishes two-way connection in a different way; traffic is very light using WebSocket, and it demonstrates superior performance [15]. 
 
+    因为相比于如Comet等现有的方法更先进的设计，WebSocket以不同的方式建立双向连接；传输很轻通过使用WebSocket，它显示了卓越的性能。
+
 Figure 4 displays a comparison of polling methods and the WebSocket system.
 
+    图4显示轮询方法和WebSocket系统的比较。
+    
 [](figure4.png)
 
 Figure 4. Comparison of WebSocket and Conventional Polling Methods
+
+    图4 WebSocket和传统的轮询方法的比较
 
 3.Design and Implementation of the Experiment
 
@@ -340,13 +466,30 @@ The following assumptions are made:
 * The developer is required to use the easy-to-use API net reason.
 * It is necessary to extend the SOA beyond environments such as the cloud, and Web.
 
+
+    下面的假设：
+        * WebSocket技术是必需。
+        * 实时双向数据通信是必需的。
+        * 有很多并发连接。
+        * 要使用基于浏览器的TCP通信。
+        * 开发人员需要使用易于使用的API的原因。
+        * 为了扩展SOA超越如云环境和网络。
+
 Therefore, in this paper, our experimental design functions through the polling conventional manner with real-time two-way data communication using the WebSocket methodology through the transfer delay time. 
+
+    因此,在本文中,我们的实验设计功能是通过向传统轮询方式与使用实时的双向数据通信的WebSocket方式设置传输延迟时间。
 
 We compare the overhead corresponding to the number of concurrent users, and analyze its performance. 
 
+    我们比较了相应的并发用户的数量的开销，并分析其性能。
+
 To ensure that the experiment is accurate, we implemented the Web to execute the polling method and the WebSocket technology to execute the multimedia data communication system. 
 
+    为了确保试验的准确性，我们实现了Web执行轮询方法和WebSocket技术进行多媒体数据通信系统。
+
 For the client polling method, we use the setInterVal() method, and transmit the HTTP requests at regular intervals through the browser.
+
+    对于客户端轮询的方法，我们使用setinterval()方法，定期通过浏览器发送HTTP请求的方法。
 
 3.2.Experiment Environment
 
@@ -354,15 +497,27 @@ For the client polling method, we use the setInterVal() method, and transmit the
     
 In this paper, we propose a HTML5-based client/server environment for the experiment.
 
+    在本文中，我们提出了一个基于HTML5的客户端/服务器环境实验。
+
 The client and the server will utilize two-way communication to send and receive multimedia data. 
+
+    客户端和服务器将利用双向通信来发送和接收多媒体数据。
 
 We conducted experiments using WebSocket methods and polling methods to connect the client and server. 
 
+    我们进行了使用WebSocket方法和轮询方法来连接客户机和服务器实验。
+
 The WebSocket and polling system source code for both client and server is displayed in the following section. 
+
+    WebSocket和轮询系统的客户端和服务器系统的源代码在下面的部分显示。
 
 The client requests a WebSocket connection on the server with JavaScript (JS), included in the HTML to be sent to the HTTP server. 
 
+    客户端请求器一个WebSocket连接通过JavaScript的服务端，包含在HTML被发送到http服务器。
+
 Therefore, it transmits the HTML by constructing an HTTP server node.js.
+
+    因此，它发送html通过建立一个HTTP服务器Node.js。
 
 ```javascript
 var clientScript = function() {
@@ -433,51 +588,91 @@ By comparing the results from the WebSocket and polling method client/server con
     
 We compared the overhead of the network implemented via the server and the client. 
 
-As shown in Figure 5(a), the system is a WebSocket header data request and the response does not exist. On the other hand, as shown in Figure 5(b), in the polling method, whenever there is a response to the HTTP request, the HTTP headers are passed, and the associated overhead occurs.
+    我们比较了通过服务器和客户端实现的网络的开销。
 
+As shown in Figure 5(a), the system is a WebSocket header data request and the response does not exist. 
+
+    如图5（a），该系统是一个WebSocket报头数据请求和响应不存在。
+
+On the other hand, as shown in Figure 5(b), in the polling method, whenever there is a response to the HTTP request, the HTTP headers are passed, and the associated overhead occurs.
+
+    在另一方面，作为显示在图5（b），在轮询方法，每当有一个响应对HTTP的请求，HTTP headers被传递，相关的开销发生。
 
 (a) Value of WebSocket header (b) Value of polling heade
 
+    （a）WebSocket头部报文值（b）轮询头部报文值
+
 Figure 5. Comparison of the ActualOoverhead of WebSocket and Polling Method
+
+    图5 WebSocket和轮询的方法比较的实际开销
 
 In order to communicate multimedia data of one gigabyte, the polling method is used.
 
+    为了沟通1G的多媒体数据，采用轮询的方法。
+
 The WebSocket system needs the capacity of the header data to be about 1,000 bytes; the header is not needed because of the low data capacity. 
+
+    WebSocket通信系统需要的头数据容量约为1000字节；不需要头因为低的数据容量。
 
 It is assumed that when ten persons access the multimedia data of one gigabyte using the polling method, (that the header data capacity is 10,000 bytes, then when 100 people access the multimedia data of one gigabyte, that the header data capacity will be 100,000 bytes.
 
+    假定当十人使用轮询方法访问1G的多媒体数据，（该头的数据容量为10000字节，那么当100人访问1G，多媒体数据，数据量是100000个字节的头）。
+
 On the other hand, with the WebSocket type, the additional capacity does not occur. 
 
+    另一方面，因为WebSocket方式，额外的容量不发生。
+
 These additional header data generate the overhead for a large number of users on the network.
+
+    这些附加的头数据产生大量用户在网络上的开销。
 
 [](figure6.png)
 
 Figure 6. Comparison of the Overhead Generated by the Polling and WebSocket Method based on the Concurrent Number of Users
 
+    图6 通过基于用户并发数的轮询和WebSocket方法产生的开销比较
 
 In addition, we also measured the transfer delay time and the overhead generated by increasing the number of concurrent connections.
 
+    此外，我们还测量了传输延迟时间和所产生的通过增加并发连接数量的开销。
+
 We compared the overhead generated by an increasing number of concurrent users. 
+
+    我们比较的开销是通过越来越多的并发用户产生的。
 
 Figure 6 shows the results. 
 
+    图6显示了结果。
+
 As the concurrent number of users increase, the overhead of the polling method increases, while the overhead of WebSocket system was barely noticeable. 
+
+    随着用户数量的增加的同时，轮询的方法开销增加，而WebSocket的系统开销是几乎不引人注意的。
 
 In the polling method, starting from the client’s request, the forward delay time, the time of 60 ms consuming, and the time while waiting re-request, even if the response occurs after the response time from the server, all become overhead. However, using the WebSocket system, connections that occur after the first connection, resulted in the connection being maintained, with no additional latency.
 
+    在轮询方法中，从客户端的请求开始，转发延迟时间，60毫秒的时间消耗，并且在等待时间的要求，即使响应发生在服务器响应时间后，都成为开销。然而，使用WebSocket系统，连接发生的第一个连接后，导致连接被保持，没有额外的延迟。
+
 Figure 7 is a graph comparing the response times of the system using the polling and WebSocket methods. 
 
+    图7是比较的系统采用轮询和WebSocket的方法的响应时间，。
+
 The x-axis represents the number of requests, and the y-axis represents the response time (ms).
+
+    X轴表示请求的数量，y轴表示响应时间（毫秒）。
 
 [](figure7.png)
 
 Figure 7. Comparison of the Response Time of the WebSocket and Polling Method
+
+    图7。比较的WebSocket和轮询的方法的响应时间
 
 4.2.Cross-Browser
 
     跨浏览器
 
 In this paper, a comparison was made between the overhead and response time of the polling and WebSocket methods. 
+
+    本文比较的开销和响应时间的投票和WebSocket的方法。
 
 Currently, not all HTML5 functions work across browsers. 
 
