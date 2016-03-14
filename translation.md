@@ -6,99 +6,101 @@ Jin-tae Park, Hyun-seo Hwang, Jun-soo Yun and Il-young Moon
 
 School of Computer Science and Engineering,Korea University of Technology and Education.
 
-计算机科学与工程学院，韩国技术教育大学。
+    计算机科学与工程学院，韩国技术教育大学。
 
 {wlsxo05, smilebear1, yuntn55, iymoon}@koreatech.ac.kr
 
 Abstract
 
-摘要
+    摘要
 
 Recently, with the advent HTML5, the performance of Web service has improved. 
 
-最年来，随着HTML5的出现，web服务的性能得到了改善。
+    最近几年来，随着HTML5的出现，web服务的性能得到了改善。
 
 It was difficult to configure the web services using only HTML. 
 
-仅使用HTML去配置web服务是困难的。
+    仅使用HTML去配置web服务是困难的。
 
 However, communication between the client and the server is now possible because of HTML5. 
 
-然而，因为HTML5的出现，在客户端和服务器端的通信现在是可能的。
+    然而，因为HTML5的出现，在客户端和服务器端的通信现在是可能的。
 
 HTML5 was designed to be platform independent, and can be used on an increasing number of mobile devices for creating both mobile websites and mobile applications. 
 
-HTML5是平台独立的，并且可以在越来越多的移动设备上用于创建移动网站和移动应用程序。
+    HTML5是平台独立的，并且可以在越来越多的移动设备上用于创建移动网站和移动应用程序。
 
 It is frequently cited as the primary solution for enabling effective cross-platform deployment onto various smart devices.
 
-它经常被作为主要的解决方案可以有效的跨平台部署到各种智能设备上。
+    它经常被作为主要的解决方案可以有效的跨平台部署到各种智能设备上。
 
 HTML5 has many new features. One of the most powerful features is the WebSocket.
-HTML5有许多新特性。最强大的功能之一是WebSocket。
+    
+    HTML5有许多新特性。最强大的功能之一是WebSocket。
 
 Updated HTML5 specifications for web sockets, web browsers, and web servers allow sending and receiving data in real time, via an always-on TCP connection. 
 
-更新规范的HTML5 web sockets、web浏览器和web服务器允许发送和接收实时数据,通过不间断的TCP连接。
+    更新规范的HTML5 web sockets、web浏览器和web服务器允许发送和接收实时数据,通过不间断的TCP连接。
 
 The crucial differences between pre-HTML5 communication methods and HTML5 WebSocket are located in the new HTML5 protocol. 
 
-之前html5通信方法和HTML5 WebSocket之间的关键差异是在于WebSocket采用了新的HTML5协议（WebSocket protocol）。
+    之前html5通信方法和HTML5 WebSocket之间的关键差异是在于WebSocket采用了新的HTML5协议（WebSocket protocol）。
 
 WebSocket protocol uses HTTP to establish a connection, but the subsequent communication is performed by the WebSocket reader protocol. 
 
-WebSocket协议采用HTTP建立连接，但随后的通信是通过WebSocket协议执行器。
+    WebSocket协议采用HTTP建立连接，但随后的通信是通过WebSocket协议执行器。
 
 In addition, the feature header is very small, resulting in reduced communication overhead. 
 
-此外，特征头是非常小的，从而减少通信开销。
+    此外，特征头是非常小的，从而减少通信开销。
 
 The WebSocket aims to solve the problems of the conventional communication method, though it has several restrictions. 
 
-WebSocket旨在解决传统通信方式的问题，尽管它有一些限制。
+    WebSocket旨在解决传统通信方式的问题，尽管它有一些限制。
 
 Therefore, in this study, experiments were conducted to measure the performance analysis of WebSocket. 
 
-因此，在这项研究中，进行了实验测量WebSocket的性能分析。
+    因此，在这项研究中，进行了实验测量WebSocket的性能分析。
 
 We conclude by presenting the direction of future research in this field.
 
-最后，我们提出在这一领域的未来研究的方向。
+    最后，我们提出在这一领域的未来研究的方向。
 
 Keywords: HTML5, WebSocket, Cross-Browser, Multi-media, Polling
 
-关键词：HTML5, WebSocket, Cross-Browser（跨浏览器）, Multi-media（多媒体）, Polling（轮询）
+    关键词：HTML5, WebSocket, Cross-Browser（跨浏览器）, Multi-media（多媒体）, Polling（轮询）
 
 1. Introduction
-1. 引言
+    
+    1. 引言
 
 HTML5 has attracted significant attention in the recent years.
 
-HTML5已经在最近几年引起了人们极大的关注。
+    HTML5已经在最近几年引起了人们极大的关注。
 
 HTML5 is the nextgeneration standard proposed in HTML [1]. 
 
-HTML5是HTML的下一代标准的建议。
+    HTML5是HTML的下一代标准的建议。
 
 It is not possible to configure the Web services using only HTML. 
 
-配置Web服务是不可能只使用HTML。
+    配置Web服务是不可能只使用HTML。
 
 However, with the advent of HTML5, it is possible for the clients and servers to communicate. 
 
-然而,随着HTML5的出现,可以为客户端和服务器通信。
+    然而,随着HTML5的出现,可以为客户端和服务器通信。
 
 HTML5 was designed to be platform independent, and can be used on an increasing number of mobile devices for creating both mobile websites and mobile applications.
 
-HTML5是平台独立的，并且可以在越来越多的移动设备上用于创建移动网站和移动应用程序。
+    HTML5是平台独立的，并且可以在越来越多的移动设备上用于创建移动网站和移动应用程序。
 
 It is frequently cited as the primary solution for enabling effective cross-platform deployment onto various smart devices. 
 
-它经常被作为主要的解决方案可以有效的跨平台部署到各种智能设备上。
+    它经常被作为主要的解决方案可以有效的跨平台部署到各种智能设备上。
 
 Some features of HTML5 may be provided to Web services without using external modules [2]. 
 
-HTML5的某些功能可能会提供给Web服务，而无需使用外部模块。
+    HTML5的某些功能可能会提供给Web服务，而无需使用外部模块。
 
 Market research firm Gartner, Inc. nominated HTML5 as one of the top 10 strategic technology trends for 2013. 
 
@@ -204,5 +206,94 @@ var html = '<html><head><title>Web Socket 서버</title>' +
 });
 
 ```
+
+* Source of the WebSocket server system
+
+```javascript
+var ws = new WebSocket("ws://localhost:3000/", ["test", "chat"]); ws.onopen = function() {
+ws.send("test");
+ws.onmessage = function(message) {
+console.log(message.data); };
+}
+```
+
+* Source of the WebSocket client system
+
+```javascript
+<script
+ language='javascript' src='http://ajax.googleapis.com/ajax/libs/jquer
+  y/1.4.2/jquery.min.js'>
+</script>
+<script>
+ $(document).ready(function(){
+ jQuery.ajax({
+ type:"GET",
+ url:"test.html",
+ success:function(msg){
+ alert(msg);
+ },error: function(xhr,status,error){
+ alert(error);
+ }
+ });
+ });
+</script>
+```
+
+* Source of the Polling client system
+
+By comparing the results from the WebSocket and polling method client/server configurations, we analyzed the header information for the server in response to client requests.
+
+4. Analysis Result
+
+4.1. WebSocket and Polling Methods
+
+We compared the overhead of the network implemented via the server and the client. As shown in Figure 5(a), the system is a WebSocket header data request and the response does not exist. On the other hand, as shown in Figure 5(b), in the polling method, whenever there is a response to the HTTP request, the HTTP headers are passed, and the associated overhead occurs.
+
+
+(a) Value of WebSocket header (b) Value of polling header
+Figure 5. Comparison of the ActualOoverhead of WebSocket and Polling Method
+
+In order to communicate multimedia data of one gigabyte, the polling method is used. The WebSocket system needs the capacity of the header data to be about 1,000 bytes; the header is not needed because of the low data capacity. It is assumed that when ten persons access the multimedia data of one gigabyte using the polling method, (that the header data capacity is 10,000 bytes, then when 100 people access the multimedia data of one gigabyte, that the header data capacity will be 100,000 bytes. On the other hand, with the WebSocket type, the additional capacity does not occur. These additional header data generate the overhead for a large number of users on the network.
+
+[](figure6.png)
+
+Figure 6. Comparison of the Overhead Generated by the Polling and WebSocket Method based on the Concurrent Number of Users
+
+
+In addition, we also measured the transfer delay time and the overhead generated by increasing the number of concurrent connections. We compared the overhead generated by an increasing number of concurrent users. Figure 6 shows the results. As the concurrent number of users increase, the overhead of the polling method increases, while the overhead of WebSocket system was barely noticeable. In the polling method, starting from the client’s request, the forward delay time, the time of 60 ms consuming, and the time while waiting re-request, even if the response occurs after the response time from the server, all become overhead. However, using the WebSocket system, connections that occur after the first connection, resulted in the connection being maintained, with no additional latency. Figure 7 is a graph comparing the response times of the system using the polling and WebSocket methods. The x-axis represents the number of requests, and the y-axis represents the response time (ms).
+
+[](figure7.png)
+
+Figure 7. Comparison of the Response Time of the WebSocket and Polling Method
+
+4.2. Cross-Browser
+
+
+In this paper, a comparison was made between the overhead and response time of the polling and WebSocket methods. Currently, not all HTML5 functions work across browsers. For example, WebStorage is a new feature in HTML5 that provides a function similar to cookies, but allows more advanced data storage on the client. However, because different browsers store data in different repositories, data access cannot be performed where compatibility is an issue. This was subjected to cross-browser tests using the two methods, in order to solve this problem.
+
+* Save each to each Browser
+If an inspection has not been performed to determine whether a cookie is present in each browser, use cookie as the recording method.
+* Shared Flash Object
+Use the Shared Object for shared data storage, for client-side Flash presentation.
+
+The next figure displays an information screen indicating that you are logged into Chrome for either of the previous methods, and is recognized by IE.
+
+[](figure8.png)
+
+Figure 8. Cross-Browser compared with Two Browsers
+
+
+5. Conclusion
+
+Interest in the new Web Of Things (WoT) standard is rapidly increasing. Specific interest in this proposed standard, which connects large numbers of devices together using the web, will continue to increase, thus increasing interest in HTML5. In such a situation, with the advent of HTML5, we are able to provide better service, which is significantly faster than the existing Web services. HTML5 uses an open Web standard as a Web application platform and is a next-generation productivity improvement for Web development, which works together to create a better user experience.
+
+HTML5 is a concept that includes a JavaScript API extension for CSS3, the web style sheet language. CSS3 is capable of providing a representation that is consistent with different browsers, in a convenient and effective manner. The JavaScript API allows the development of local applications, and can control the various resources and rich features. This includes WebStorage, WebWorker, WebSocket, and the GeolocationAPI.
+
+The function of WebSocket technology is to improve performance. This reduces the network load when compared to conventional methods. The WebSocket technology is often used when real-time two-way data communication is required. In particular, the positive effects of using the WebSocket technology are more pronounced while using web applications based on real-time two-way data communication. On the other hand, not many browsers that support HTML5 support web sockets. Further, if security is enabled while using a web socket, it proves to be disadvantageous. Currently, technical research is actively promoted for using WebSocket technology to improve its performance. In addition, future research can be conducted to study cross-browser compatibility with WebSocket technology, and reduction of its security vulnerability can be researched.
+
+Acknowledgement
+
+This research was financially supported by the Ministry of Knowledge Economy(MKE) and Korea Institute for Advancement of Technology(KIAT) through the Research and Development for Regional Industry.
+
 
 
