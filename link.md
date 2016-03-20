@@ -2,6 +2,8 @@ crbug.com == https://bugs.chromium.org/p/chromium/issues/list
 
 https://www.virusbook.cn/
 
+http://pandoc.org/
+
 开发流程方面，至少涉及四个平台：
 代码托管
 持续集成
