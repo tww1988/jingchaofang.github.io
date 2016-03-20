@@ -4,6 +4,14 @@ https://www.virusbook.cn/
 
 http://pandoc.org/
 
+https://github.com/blog/832-rolling-out-the-redcarpet   github的markdown渲染引擎
+
+http://www.yy42.net/blog/
+
+https://www.douban.com/note/147668553/
+
+
+
 开发流程方面，至少涉及四个平台：
 代码托管
 持续集成
