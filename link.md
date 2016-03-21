@@ -12,6 +12,10 @@ https://www.douban.com/note/147668553/
 
 https://www.wilddog.com/
 
+https://www.zhihu.com/question/20790576/answer/32602154
+
+https://www.zhihu.com/question/20790576/answer/32602154
+
 
 开发流程方面，至少涉及四个平台：
 代码托管
