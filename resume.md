@@ -9,6 +9,6 @@
 
 发展方向：全端工程师
 
-正在点亮的技术栈：HTML5、CSS3、JavaScript、PHP
+正在点亮的技术栈：WebAPP、JavaScript、PHP
 
 最近看过的技术书：《JavaScript语言精粹修订版》、《Javascript权威指南第6版》
