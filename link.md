@@ -2,6 +2,8 @@ crbug.com == https://bugs.chromium.org/p/chromium/issues/list
 
 https://kiwiirc.com/
 
+http://www.ithome.com/html/soft/214068.htm
+
 http://www.epooll.com/archives/806/
 
 http://www.sensorsdata.cn/
