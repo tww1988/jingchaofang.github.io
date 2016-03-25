@@ -9,4 +9,6 @@
 
 发展方向：全端工程师
 
-技术书籍：《JavaScript语言精粹修订版》、《Javascript权威指南第6版》
+正在点亮的技术栈：HTML5、CSS3、JavaScript、PHP
+
+最近看过的技术书：《JavaScript语言精粹修订版》、《Javascript权威指南第6版》
