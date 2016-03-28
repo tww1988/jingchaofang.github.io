@@ -8,6 +8,8 @@ https://jsfiddle.net/
 
 http://codepen.io/
 
+https://webchat.freenode.net/
+
 https://modernizr.com/
 
 https://kiwiirc.com/
