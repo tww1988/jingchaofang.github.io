@@ -4,6 +4,8 @@ http://iwebad.com/   成立于2007年，致力于分享国外有创意的营销�
 
 https://jsfiddle.net/
 
+https://modernizr.com/
+
 https://kiwiirc.com/
 
 http://www.ithome.com/html/soft/214068.htm
