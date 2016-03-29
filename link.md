@@ -8,6 +8,10 @@ https://getlantern.org/  翻墙工具
 
 http://www.paintcodeapp.com/
 
+http://www.quirksmode.org/mobile/viewports2.html
+
+http://www.w3cplus.com/css/viewports.html
+
 https://jsfiddle.net/
 
 http://codepen.io/
