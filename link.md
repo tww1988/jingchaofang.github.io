@@ -8,6 +8,8 @@ https://www.omnigroup.com/omniplan/  项目管理工具ominiplan
 
 https://getlantern.org/  翻墙工具
 
+http://www.wmy-ad.com/baidu/20160204/index.html
+
 http://www.pedant.cn/2014/07/04/webview-js-java-interface-research/
 
 http://www.paintcodeapp.com/
