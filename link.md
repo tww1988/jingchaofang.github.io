@@ -8,6 +8,8 @@ https://www.omnigroup.com/omniplan/  项目管理工具ominiplan
 
 http://720yun.com/  云观世界
 
+http://www.easyar.cn/index.html
+
 http://tldp.org/  linux学习文档
 
 http://tldp.org/LDP/abs/html/
