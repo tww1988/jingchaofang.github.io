@@ -8,6 +8,8 @@ https://www.omnigroup.com/omniplan/  项目管理工具ominiplan
 
 http://guides.ruby-china.org/asset_pipeline.html  Ruby on Rails指南
 
+http://guides.rubyonrails.org/asset_pipeline.html
+
 http://720yun.com/  云观世界
 
 http://www.easyar.cn/index.html
