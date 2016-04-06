@@ -2,6 +2,8 @@ crbug.com == https://bugs.chromium.org/p/chromium/issues/list
 
 http://iwebad.com/   成立于2007年，致力于分享国外有创意的营销案例
 
+https://www.sdk.cn/  开发者服务平台
+
 http://www.css88.com/book/css/experience/skill.htm
 
 https://www.omnigroup.com/omniplan/  项目管理工具ominiplan
