@@ -8,6 +8,8 @@ https://www.w3.org/
 
 http://vr.tencent.com/
 
+https://www.smashingmagazine.com/
+
 http://www.css88.com/book/css/experience/skill.htm
 
 https://www.omnigroup.com/omniplan/  项目管理工具ominiplan
