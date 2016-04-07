@@ -6,6 +6,8 @@ https://www.sdk.cn/   开发者服务平台
 
 https://greasyfork.org/zh-CN/help/writing-user-scripts
 
+https://greasyfork.org/zh-CN/scripts
+
 https://www.w3.org/ 
 
 http://vr.tencent.com/
