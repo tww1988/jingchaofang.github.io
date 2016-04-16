@@ -6,6 +6,8 @@ https://www.sdk.cn/   开发者服务平台
 
 http://www.liuhaihua.cn/  博客
 
+https://github.com/fex-team/mod  百度modjs
+
 https://greasyfork.org/zh-CN/help/writing-user-scripts
 
 http://all-free-download.com/
