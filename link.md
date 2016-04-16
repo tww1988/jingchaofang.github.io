@@ -10,6 +10,8 @@ https://github.com/fex-team/mod  百度modjs
 
 https://www.heroku.com/
 
+http://doctoc.herokuapp.com/
+
 https://greasyfork.org/zh-CN/help/writing-user-scripts
 
 http://all-free-download.com/
