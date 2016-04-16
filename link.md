@@ -4,6 +4,8 @@ http://iwebad.com/   成立于2007年，致力于分享国外有创意的营销�
 
 https://www.sdk.cn/   开发者服务平台
 
+http://www.liuhaihua.cn/  博客
+
 https://greasyfork.org/zh-CN/help/writing-user-scripts
 
 http://all-free-download.com/
