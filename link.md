@@ -6,6 +6,8 @@ https://www.sdk.cn/   开发者服务平台
 
 https://greasyfork.org/zh-CN/help/writing-user-scripts
 
+http://all-free-download.com/
+
 https://greasyfork.org/zh-CN/scripts
 
 https://www.w3.org/ 
