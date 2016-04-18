@@ -8,6 +8,8 @@ http://www.liuhaihua.cn/  博客
 
 https://github.com/fex-team/mod  百度modjs
 
+http://editorconfig.org/  编辑工具配置文件
+
 https://www.heroku.com/
 
 http://doctoc.herokuapp.com/
