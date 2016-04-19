@@ -12,6 +12,8 @@ http://editorconfig.org/  编辑工具配置文件
 
 https://www.heroku.com/
 
+http://www.goodsync.com/ 同步文件工具
+
 http://doctoc.herokuapp.com/
 
 https://greasyfork.org/zh-CN/help/writing-user-scripts
