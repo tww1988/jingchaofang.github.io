@@ -12,6 +12,8 @@ http://editorconfig.org/  编辑工具配置文件
 
 https://www.heroku.com/
 
+https://www.omnigroup.com/omnigraffle 原型工具
+
 https://tower.im/ 协作办公
 
 http://www.goodsync.com/ 同步文件工具
