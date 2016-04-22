@@ -10,6 +10,8 @@ https://github.com/fex-team/mod  百度modjs
 
 http://editorconfig.org/  编辑工具配置文件
 
+http://www.geetest.com/ 极验验证
+
 https://www.heroku.com/
 
 https://www.omnigroup.com/omnigraffle 原型工具
