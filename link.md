@@ -2,6 +2,8 @@ crbug.com == https://bugs.chromium.org/p/chromium/issues/list
 
 http://iwebad.com/   成立于2007年，致力于分享国外有创意的营销案例
 
+https://www.pgyer.com/  应用内测
+
 https://www.sdk.cn/   开发者服务平台
 
 http://www.liuhaihua.cn/  博客
