@@ -2,6 +2,8 @@ crbug.com == https://bugs.chromium.org/p/chromium/issues/list
 
 9190
 
+https://tinypng.com/ 图片压缩网站及photoshop插件
+
 http://iwebad.com/   成立于2007年，致力于分享国外有创意的营销案例
 
 https://www.pgyer.com/  应用内测
