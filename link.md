@@ -2,6 +2,8 @@ crbug.com == https://bugs.chromium.org/p/chromium/issues/list
 
 9190
 
+https://xitu.io/ 汇聚最优质的互联网技术&人才
+
 http://wetest.qq.com/ 腾讯质量开放平台
 
 https://tinypng.com/ 图片压缩网站及photoshop插件
