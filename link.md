@@ -2,7 +2,7 @@ https://bugs.chromium.org/p/chromium/issues/list  crbug.com chrome bug集
 
 9190
 
-https://packagecontrol.io/ 找你喜欢的sublime插件
+https://packagecontrol.io/ 找你喜欢的sublime插件和使用方法
 
 https://www.phpdoc.org/docs/latest/index.html  phpdoc最新规范
 
