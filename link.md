@@ -1,4 +1,4 @@
-crbug.com == https://bugs.chromium.org/p/chromium/issues/list 
+https://bugs.chromium.org/p/chromium/issues/list  crbug.com chrome bug集
 
 9190
 
