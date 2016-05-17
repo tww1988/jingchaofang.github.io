@@ -2,6 +2,8 @@ https://bugs.chromium.org/p/chromium/issues/list  crbug.com chrome bug集
 
 9190
 
+https://packagecontrol.io/ 找你喜欢的sublime插件
+
 https://www.phpdoc.org/docs/latest/index.html  phpdoc最新规范
 
 http://www.oneapm.com/ 端到端的应用性能管理软件云解决方案应用性能监控平台
