@@ -2,6 +2,8 @@ https://bugs.chromium.org/p/chromium/issues/list  crbug.com chrome bug集
 
 9190
 
+https://www.codecademy.com/  Learn to code interactively, for free.
+
 https://cn.udacity.com/ 优达学城
 
 http://redis.cn/
