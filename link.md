@@ -2,6 +2,8 @@ https://bugs.chromium.org/p/chromium/issues/list  crbug.com chrome bug集
 
 9190
 
+https://neovim.io/  literally the future of vim
+
 http://savvyapps.com/
 
 https://www.codecademy.com/  Learn to code interactively, for free.
