@@ -4,6 +4,8 @@ https://bugs.chromium.org/p/chromium/issues/list  crbug.com chrome bug集
 
 https://laracasts.com/ The Best Laravel and PHP Screencasts
 
+http://goodrain.com/
+
 https://neovim.io/  literally the future of vim
 
 http://savvyapps.com/
