@@ -2,6 +2,8 @@ https://bugs.chromium.org/p/chromium/issues/list  crbug.com chrome bug集
 
 9190
 
+https://www.gnu.org/software/cgicc/
+
 https://linuxtoy.org/archives/from-screen-to-tmux.html
 
 https://laracasts.com/ The Best Laravel and PHP Screencasts
