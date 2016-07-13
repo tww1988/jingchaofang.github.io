@@ -12,6 +12,7 @@
 
 相关职责：调研新技术新工具，适时应用到团队中；制定代码规范，并通过工具来确保规范的执行；填补基础类库和业务开发之间的断层，提供工具库和UI框架并编写文档，提升业务开发效率；优化构建流程和开发环境，提升业务工程师的开发体验；组织定期的技术交流会和不定期的技术分享。
 
-正在点亮的技能点：WebAPP、JavaScript、PHP、Linux、Vim、Shell...
+正在点亮的技能点：WebAPP、HybridAPP、JavaScript、PHP、Linux、Vim、Shell...
 
-正在进修的书籍：《JavaScript语言精粹修订版》、《Javascript权威指南第6版》、《Shell脚本学习指南》、《PHP和Mysql Web开发》、《Web应用安全权威指南》、《白帽子讲Web安全》、《HTML5数据推送应用开发》
+正在进修的书籍：《JavaScript语言精粹修订版》、《JavaScript权威指南第6版》、《Shell脚本学习指南》、《PHP和Mysql Web开发》、《Web应用安全权威指南》、《白帽子讲Web安全》、《HTML5数据推送应用开发》
+
