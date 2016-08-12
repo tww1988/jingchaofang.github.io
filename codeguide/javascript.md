@@ -1,10 +1,13 @@
 参考
 ----
 
-[Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript), [中文版](https://github.com/sivan/javascript-style-guide/blob/master/es5/README.md)
+[Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+
+[Airbnb JS代码规范中文版](https://github.com/sivan/javascript-style-guide/blob/master/es5/README.md)
 
 
-# Airbnb JavaScript Style Guide() {  
+规范
+----
 
 *用更合理的方式写 JavaScript*
 
@@ -1742,8 +1745,3 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 **[⬆ 回到顶部](#table-of-contents)**
-
-# };
-
-
-
