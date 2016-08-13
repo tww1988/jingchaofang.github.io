@@ -19,6 +19,10 @@ https://github.com/consoles/front-end
 
 http://jsbin.com/lekob/5/edit?html,output
 
+SVG动画
+http://www.w3.org/TR/SVG/animate.html
+http://www.zhangxinxu.com/wordpress/?p=4333
+
 使用方式
 --------
 
