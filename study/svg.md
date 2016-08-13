@@ -17,6 +17,8 @@ https://github.com/consoles/front-end/tree/master/html5/SVG
 
 https://github.com/consoles/front-end
 
+http://jsbin.com/lekob/5/edit?html,output
+
 使用方式
 --------
 
