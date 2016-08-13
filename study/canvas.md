@@ -32,3 +32,7 @@ context.lineTo(700,600);
 context.strokeStyle="black";
 context.stroke();
 context.closePath();
+
+
+context.arc(centerx, centery, radius, startingAngle, endingAngle, anticlockwise = false)；
+context.arc(圆心x坐标，圆心y坐标，半径的值，从哪一个弧度值为开始，到哪一个弧度值结束，可选参数：是顺时针方向绘制（false） 还是 逆时针方向绘制（true）)
