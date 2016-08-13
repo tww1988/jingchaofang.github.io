@@ -28,6 +28,10 @@ http://www.zhangxinxu.com/wordpress/2014/07/introduce-svg-sprite-technology/
 
 http://www.zhangxinxu.com/wordpress/2013/09/svg-fallbacks/
 
+http://www.w3cplus.com/svg/svg-files-from-illustrator-to-the-web.html
+
+http://www.w3cplus.com/svg/svg-tips-for-designers.html?plg_nld=1&plg_uin=1&plg_auth=1&plg_nld=1&plg_usr=1&plg_vkey=1&plg_dev=1
+
 http://nethub2.iteye.com/blog/2147988   svg转png，jpg，pdf
 
 使用方式
