@@ -23,6 +23,11 @@ SVG动画
 http://www.w3.org/TR/SVG/animate.html
 http://www.zhangxinxu.com/wordpress/?p=4333
 
+
+http://www.zhangxinxu.com/wordpress/2014/07/introduce-svg-sprite-technology/   
+
+http://nethub2.iteye.com/blog/2147988   svg转png，jpg，pdf
+
 使用方式
 --------
 
