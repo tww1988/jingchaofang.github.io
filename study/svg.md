@@ -26,6 +26,8 @@ http://www.zhangxinxu.com/wordpress/?p=4333
 
 http://www.zhangxinxu.com/wordpress/2014/07/introduce-svg-sprite-technology/   
 
+http://www.zhangxinxu.com/wordpress/2013/09/svg-fallbacks/
+
 http://nethub2.iteye.com/blog/2147988   svg转png，jpg，pdf
 
 使用方式
