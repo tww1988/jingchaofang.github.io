@@ -6,8 +6,9 @@
 <body>
   <canvas id="canvas"></canvas>
   <script>
+    //分别表示顶点坐标和填充的颜色
     var tangram = [
-      {p:[{x:0,y:0},{x:800,y:0},{x:400,y:400}],color:"#caff67"},//分别表示顶点坐标和填充的颜色
+      {p:[{x:0,y:0},{x:800,y:0},{x:400,y:400}],color:"#caff67"},
       {p:[{x:0,y:0},{x:400,y:400},{x:0,y:800}],color:"#67becf"},
       {p:[{x:800,y:0},{x:800,y:400},{x:600,y:600},{x:600,y:200}],color:"#ef3d61"},
       {p:[{x:600,y:200},{x:600,y:600},{x:400,y:400}],color:"#f9f51a"},
@@ -15,6 +16,7 @@
       {p:[{x:200,y:600},{x:400,y:800},{x:0,y:800}],color:"#fa8ecc"},
       {p:[{x:800,y:400},{x:800,y:800},{x:400,y:800}],color:"#f6ca29"}
     ];
+    //文档加载完后执行
     window.onload = function() {
       var canvas = document.getElementById('canvas');
       canvas.width = 800;
@@ -24,7 +26,7 @@
         draw(tangram[i], context)
       }
     }
-    
+    //绘制方法，piece块，ctx上下文
     function draw(piece, ctx) {
       ctx.beginPath();
       ctx.moveTo(piece.p[0].x, piece.p[0].y);
@@ -34,7 +36,7 @@
       ctx.closePath();
       ctx.fillStyle = piece.color;
       ctx.fill();
-      ctx.stroke();
+      //ctx.stroke();
     }
   </script>
 </body>
