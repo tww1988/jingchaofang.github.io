@@ -7,6 +7,16 @@ W3C标准（http://www.w3.org/TR/SVG11/）
 
 http://caniuse.com/#cats=SVG
 
+http://paletton.com/
+
+http://myst729.github.io/bezier-curve/
+
+http://jsbin.com/
+
+https://github.com/consoles/front-end/tree/master/html5/SVG
+
+https://github.com/consoles/front-end
+
 使用方式
 --------
 
