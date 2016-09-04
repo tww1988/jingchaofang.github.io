@@ -1,3 +1,4 @@
+[HomeBrew](http://brew.sh/index_zh-cn.html)
 
 [nodejs官方手册](https://nodejs.org/en/docs/)
 
