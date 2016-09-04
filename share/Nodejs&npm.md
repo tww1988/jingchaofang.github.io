@@ -6,8 +6,6 @@
 纯前端脚手架工具
 
 [yeoman官网](http://yeoman.io/)
-[yeoman官网](http://yeoman.io/)
-[yeoman官网](http://yeoman.io/)
 
 构建工具
 
