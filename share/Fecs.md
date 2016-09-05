@@ -40,7 +40,7 @@ npm install fecs -g
 ```
 
 ```
-fecs || fecs checkout
+fecs || fecs check
 ```
 
 使用eslint对当前目录下所有JavaScript代码进行检测。使用csshint对当前目录下所有CSS代码进行检测。使用htmlcs对当前目录下所有HTML代码进行检测。
@@ -54,7 +54,7 @@ fecs dir1 --type=js 只检查js文件
 ```
 
 ```
-fecs format
+fecs format 发布到ouput、fecs format --replace 覆盖当前
 ```
 
 ```
