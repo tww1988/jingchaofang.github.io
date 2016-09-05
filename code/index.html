@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>畅销书</title>
+    <meta name="referrer" content="never">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Tahoma, "microsoft yahei", Geneva, sans-serif;
+        border: none;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    body {
+        background-color: #fff;
+    }
+    ul li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    .container {
+        position: relative;
+        width: 18rem;
+        height: auto;
+        margin: 0 auto;
+    }
+    .banner-bg {
+        position: relative;
+        width: 18rem;
+        height: 9.65rem;
+        background: url('../../../static/i/activity/oppo_topic/banner_bg.jpg') no-repeat;
+        background-size: 100% 100%;
+    }
+    .banner-text {
+        font-size: 0.6rem;
+        line-height: 1rem;
+        color: #3c4246;
+        margin: 0.7rem 1rem 0.7rem;
+        text-align: justify;
+    }
+    .topic-list {
+        margin: 0 1rem 1rem;
+    }
+    .list-title {
+        position: relative;
+        height: 2.55rem;
+    }
+    .list-title:before {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        border: none;
+        background-color: #b2eae3;
+        vertical-align: -28%;
+    }
+    .list-title span {
+        display: block;
+        position: absolute;
+        height: 1.4rem;
+        line-height: 1.2rem;
+        text-align: center;
+        color: #fff;
+        font-size: 0.7rem;
+        width: 5.225rem;
+        top: 50%;
+        left: 50%;
+        margin-top: -0.7rem;
+        margin-left: -2.6125rem;
+        background: #fff url('../../../static/i/activity/oppo_topic/list_bg.png') center no-repeat;
+        background-size: 100%;
+        vertical-align: -8%;
+    }
+    .list-des {
+        padding: 0.55rem;
+        color: #3c4246;
+        font-size: 0.6rem;
+        text-align: justify;
+        background-color: #d9f4f1;
+        margin-bottom: 0.8rem;
+    }
+    .list-bk {
+        display: -webkit-box;
+        display: box;
+        -webkit-box-pack:justify;
+        box-pack:justify;
+        -webkit-box-lines: multiple;
+        box-lines: multiple;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .list-item {
+        height: 7.3rem;
+        width: 4.5rem;
+        margin-top: 0.7rem;
+    }
+    .list-item img {
+        display: block;
+        height: 6rem;
+        width: 4.5rem;
+    }
+    .list-item span {
+        display: block;
+        height: 1.3rem;
+        line-height: 1.3rem;
+        width: 4.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: left;
+        color: #666;
+        font-size: 0.5rem;
+    }
+    </style>
+</head>
+
+<body>
+    <script>
+    (function() {
+        function o() {
+            document.documentElement.style.fontSize = (document.documentElement.clientWidth > 720 ? 720 : document.documentElement.clientWidth) / 18 + "px"
+        }
+        var e = null;
+        window.addEventListener("resize", function() {
+            clearTimeout(e), e = setTimeout(o, 300)
+        }, !1), o()
+    })(window);
+    </script>
+    <div class="container">
+        <div class="banner-bg"></div>
+        <div class="banner-text">本月畅销书惊喜连连，《我一直在你身边》顾西爵无悬念冲顶；《负负得正的人生奥义书》每天来点负能量，清新脱俗治脑残；《查令十字街84号》带你走入纽约女作家海莲与伦敦旧书店书商弗兰克的书缘情缘......7月热榜大餐，够你贴秋膘哟！</div>
+        <div class="topic-list">
+            <div class="list-title">
+                <span>美好生活</span>
+            </div>
+            <div class="list-des">生活不止眼前的苟且，还有诗和远方的田野。你最喜欢心灵鸡汤？还是心灵砒霜？
+            </div>
+            <ul class="list-bk">
+                <li class="list-item"><img src=""><span>爱情是门必修课</span></li>
+                <li class="list-item"><img src=""><span>哥三</span></li>
+                <li class="list-item"><img src=""><span>住在我心里的猴子</span></li>
+                <li class="list-item"><img src=""><span>爱情是门必修课</span></li>
+                <li class="list-item"><img src=""><span>哥三</span></li>
+                <li class="list-item"><img src=""><span>住在我心里的猴子</span></li>
+            </ul>
+        </div>
+        <div class="topic-list">
+            <div class="list-title">
+                <span>当代随笔</span>
+            </div>
+            <div class="list-des">我心里有个空洞，用千年等你来填满；我会一直在你身边，即便不说出一声喜欢。
+            </div>
+            <ul class="list-bk">
+                <li class="list-item"><img src=""><span>爱情是门必修课</span></li>
+                <li class="list-item"><img src=""><span>哥三</span></li>
+                <li class="list-item"><img src=""><span>住在我心里的猴子</span></li>
+            </ul>
+        </div>
+        <div class="topic-list">
+            <div class="list-title">
+                <span>文学小说</span>
+            </div>
+            <div class="list-des">
+            你总是说青春从不曾永远，而那时候的我们，就是最好的我们。
+            </div>
+            <ul class="list-bk">
+                <li class="list-item"><img src=""><span>爱情是门必修课</span></li>
+                <li class="list-item"><img src=""><span>哥三</span></li>
+                <li class="list-item"><img src=""><span>住在我心里的猴子</span></li>
+            </ul>
+        </div> 
+    </div>
+</body>
+
+</html>
