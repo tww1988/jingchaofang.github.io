@@ -114,6 +114,16 @@ pre-commit在代码提交前检验
 
 [fecs-git-hooks](https://github.com/cxtom/fecs-git-hooks)
 
+```
+npm install fecs-git-hooks -g
+```
+
+问题：window下无法找到.git目录
+解决：用方案封装好的shell脚本进行安装
+```
+sh install.sh
+```
+
 FAQ
 ----
 
