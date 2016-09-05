@@ -35,11 +35,33 @@ mac下的配置文件
 安装使用
 --------
 
+```
 npm install fecs -g
+```
 
+```
 fecs || fecs checkout
+```
 
+使用eslint对当前目录下所有JavaScript代码进行检测。使用csshint对当前目录下所有CSS代码进行检测。使用htmlcs对当前目录下所有HTML代码进行检测。
+
+```
+fecs dir1 dir2 匹配多个目录
+```
+
+```
+fecs dir1 --type=js 只检查js文件
+```
+
+```
 fecs format
+```
+
+```
+fecs --reporter=baidu 显示为百度中文规范提示，默认显示英文提示
+```
+
+[Fecs 命令](https://github.com/ecomfe/fecs/wiki/CLI)
 
 忽略规则
 -------
@@ -53,9 +75,50 @@ fecs --ignore='test.js'
 
 [JavaScript编码规范](https://github.com/ecomfe/spec/blob/master/javascript-style-guide.md)
 
+[Css编码规范](https://github.com/ecomfe/spec/blob/master/css-style-guide.md)
+
+[Html编码规范](https://github.com/ecomfe/spec/blob/master/html-style-guide.md)
+
+[Eslint默认规则](http://eslint.org/docs/rules/)
+
+[Eslint的Fecs配置规则](https://github.com/ecomfe/fecs/blob/master/lib/js/eslint.yml)
+
+[fixmyjs默认规则](http://jshint.com/docs/options/)
+
+[fixmyjs的Fecs配置规则](https://github.com/ecomfe/fecs/blob/master/lib/js/jshint.yml)
+
+由于修复后的代码生成使用escodegen，它将忽略源码中的空行，因此格式化后的代码将会缺少原有的空行(相关讨论)，目前的解决方案是使用 --safe=high 放弃更多的修复，但保留源码空行。激进用户可以尝试使用--safe=low 来作更多的修复。
+
+[Csslint默认规则](https://github.com/ecomfe/node-csshint/blob/master/lib/config.js)
+
+[Csslint的Fecs配置规则](https://github.com/ecomfe/fecs/blob/master/lib/css/csshint.yml)
+
+[Htmlcs默认规则](https://github.com/ecomfe/htmlcs/blob/master/lib/default/htmlcsrc)
+
+[Htmlcs的Fecs配置规则](https://github.com/ecomfe/fecs/blob/master/lib/html/htmlcs.yml)
+
+由于部分规则ESLint默认未实现（如缩进的indent和单var定义多个变量的disallow-multi-var）或实现得太粗旷或有Bug（如检查JSDoc3注释的valid-jsdoc）等，我们在FECS作了修改版，此类规则在配置文件中的表现是多了fecs-前缀。
+
+检查结果对应的规则名称，可以在执行时使用rule 参数：fecs --rule
+
+配置文件
+--------
+
+.fecsrc文件，配置项将会覆盖FECS的默认值
+
+
 fecs-git-hooks
 --------------
 
-在代码提交前检验pre-commit
+pre-commit在代码提交前检验
 
 [fecs-git-hooks](https://github.com/cxtom/fecs-git-hooks)
+
+FAQ
+----
+
+[FAQ](https://github.com/ecomfe/fecs/wiki/FAQ)
+
+[Fecs自有规则](https://github.com/ecomfe/fecs/wiki/FECSRules)
+
+[HowToFix](https://github.com/ecomfe/fecs/wiki/HowToFix)
