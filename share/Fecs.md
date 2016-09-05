@@ -45,3 +45,10 @@ fecs format
 --------
 
 [JavaScript编码规范](https://github.com/ecomfe/spec/blob/master/javascript-style-guide.md)
+
+fecs-git-hooks
+--------------
+
+在代码提交前检验pre-commit
+
+[fecs-git-hooks](https://github.com/cxtom/fecs-git-hooks)
