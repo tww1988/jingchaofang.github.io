@@ -41,6 +41,13 @@ fecs || fecs checkout
 
 fecs format
 
+忽略规则
+-------
+
+使用.fecsignore文件配置，fecs check file 优先级最高忽略改规则文件。
+
+fecs --ignore='test.js'
+
 编程规范
 --------
 
