@@ -22,7 +22,7 @@
 
 设计并实现核心业务的前端框架，以工程化的思维提升团队整体研发效率和质量；关注用户体验，不断改进服务的易用性；持续的性能优化，实现极致的Web加载、执行和渲染优化；改进协作流程，创建技术标准和规范，完善开发基础设施；为组员的技术成长制定目标、计划并帮助实施。
 
-技能标签：WebAPP、HybridAPP、Nodejs、JavaScript、HTML5、CSS3、PHP、Linux、Vim、Shell、Git、SVN...
+技能标签：WebAPP、HybridAPP、Nodejs、JavaScript、HTML5、CSS3、PHP、Linux、Vim、Shell、[Python](https://www.python.org/)、Git、SVN...
 
 进修书籍：《JavaScript语言精粹修订版》、《JavaScript权威指南第6版》、《Shell脚本学习指南》、《Web应用安全权威指南》、《白帽子讲Web安全》、《HTML5数据推送应用开发》、《JavaScript高级程序设计第3版》
 
