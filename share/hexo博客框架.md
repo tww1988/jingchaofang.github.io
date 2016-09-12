@@ -44,8 +44,8 @@ npm install
 
 网站
 
-|:----:|:----:|
 |参数|描述|
+|:----:|:----:|
 |title|网站标题|
 |subtitle|网站副标题|
 |description|网站描述|
