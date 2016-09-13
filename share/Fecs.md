@@ -13,8 +13,8 @@ window下的配置文件
 ```
 {
   "env": {
-    "fecs_bin": "C:/Users/zy/AppData/Roaming/npm/node_modules/fecs/bin/fecs",
-    "node_bin": "D:/Program Files/nodejs/node.exe"
+    "fecs_bin": "C:\\Users\\zy\\AppData\\Roaming\\npm\\node_modules\\fecs\\bin\\fecs",
+    "node_bin": "D:\\Program Files\\nodejs\\node.exe"
   }
 }
 ```
