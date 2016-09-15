@@ -191,22 +191,76 @@ hexo version 显示 Hexo 版本
 -------
 ```
 安全模式 hexo --safe 在安全模式下，不会载入插件和脚本。当您在安装新插件遭遇问题时，可以尝试以安全模式重新执行。
-
+```
+```
 调试模式 hexo --debug 在终端中显示调试信息并记录到debug.log。当您碰到问题时，可以尝试用调试模式重新执行一次，并提交调试信息到GitHub。
-
+```
+```
 简洁模式 hexo --silent 隐藏终端信息。
-
+```
+```
 自定义配置文件的路径 hexo --config custom.yml 自定义配置文件的路径，执行后将不再使用_config.yml。
-
+```
+```
 显示草稿 hexo --draft 显示source/_drafts文件夹中的草稿文章。
-
+```
+```
 自定义CWD hexo --cwd /path/to/cwd 自定义当前工作目录（Current working directory）的路径。
 ```
 
 迁移
 ----
 
-cc
+**RSS**
+
+首先，安装hexo-migrator-rss插件，```npm install hexo-migrator-rss --save```
+插件安装完成后，执行下列命令，从RSS迁移所有文章。source可以是文件路径或网址。```hexo migrate rss <source>```
+
+**Jekyll**
+
+把```_posts```文件夹内的所有文件复制到```source/_posts```文件夹，并在 ```_config.yml```中修改```new_post_name```参数。
+
+```
+new_post_name: :year-:month-:day-:title.md
+```
+
+**Octopress**
+
+把Octopress```source/_posts``` 文件夹内的所有文件转移到Hexo的```source/_posts```文件夹，并修改```_config.yml```中的```new_post_name```参数。
+
+```
+new_post_name: :year-:month-:day-:title.md
+```
+
+**WordPress**
+
+首先，安装hexo-migrator-wordpress插件。
+
+```
+npm install hexo-migrator-wordpress --save
+````
+
+在WordPress仪表盘中导出数据(“Tools” → “Export” → “WordPress”)（详情参考WP支持页面）。
+
+插件安装完成后，执行下列命令来迁移所有文章。source可以是WordPress导出的文件路径或网址。
+```
+hexo migrate wordpress <source>
+```
+
+**Joomla**
+
+首先，安装 hexo-migrator-joomla 插件。
+
+```
+npm install hexo-migrator-joomla --save
+```
+
+使用J2XML组件导出Joomla文章。插件安装完成后，执行下列命令来迁移所有文章。source可以是Joomla导出的文件路径或网址。
+```
+hexo migrate joomla <source>
+```
+
+
 
 
 
