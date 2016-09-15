@@ -128,6 +128,7 @@ Hexo使用[Moment.js](http://momentjs.com/)来解析和显示时间。
 指令
 ----
 
+```
 hexo ini [folder] 新建一个网站。如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。
 
 hexo new [layout] <title> 新建一篇文章。如果没有设置layout的话，默认使用```_config.yml```中的default_layout参数代替。如果标题包含空格的话，请使用引号括起来。
@@ -168,10 +169,11 @@ hexo clean 清除缓存文件(db.json)和已生成的静态文件(public)
 hexo list <type> 列出网站资料
 
 hexo version 显示 Hexo 版本
+```
 
 指令选项
 -------
-
+```
 安全模式 hexo --safe 在安全模式下，不会载入插件和脚本。当您在安装新插件遭遇问题时，可以尝试以安全模式重新执行。
 
 调试模式 hexo --debug 在终端中显示调试信息并记录到debug.log。当您碰到问题时，可以尝试用调试模式重新执行一次，并提交调试信息到GitHub。
@@ -183,7 +185,7 @@ hexo version 显示 Hexo 版本
 显示草稿 hexo --draft 显示source/_drafts文件夹中的草稿文章。
 
 自定义CWD hexo --cwd /path/to/cwd 自定义当前工作目录（Current working directory）的路径。
-
+```
 
 迁移
 ----
