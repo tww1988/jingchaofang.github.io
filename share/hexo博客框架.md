@@ -378,7 +378,9 @@ content
 {% endblockquote %}
 ```
 
-样例：没有提供参数，则只输出普通的 blockquote
+样例：
+
+没有提供参数，则只输出普通的 blockquote
 ```
 {% blockquote %}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.
@@ -395,5 +397,218 @@ Do not just seek happiness for yourself. Seek happiness for all. Through kindnes
 {% endblockquote %}
 ```
 
-> Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy. 
-** David Levithan** —— Wide Awake
+引用 Twitter
+```
+{% blockquote @DevDocs https://twitter.com/devdocs/status/356095192085962752 %}
+NEW: DevDocs now comes with syntax highlighting. http://devdocs.io
+{% endblockquote %}
+```
+
+引用网络上的文章
+```
+{% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %}
+Every interaction is both precious and an opportunity to delight.
+{% endblockquote %}
+```
+
+**代码块**
+
+在文章中插入代码。
+
+别名： code
+
+```
+{% codeblock [title] [lang:language] [url] [link text] %}
+code snippet
+{% endcodeblock %}
+```
+
+样例:
+
+普通的代码块
+```
+{% codeblock %}
+alert('Hello World!');
+{% endcodeblock %}
+```
+
+指定语言
+
+```
+{% codeblock lang:objc %}
+[rectangle setX: 10 y: 10 width: 20 height: 20];
+{% endcodeblock %}
+```
+
+附加说明
+```
+{% codeblock Array.map %}
+array.map(callback[, thisArg])
+{% endcodeblock %}
+```
+
+附加说明和网址
+```
+{% codeblock _.compact http://underscorejs.org/#compact Underscore.js %}
+_.compact([0, 1, false, 2, '', 3]);
+=> [1, 2, 3]
+{% endcodeblock %}
+```
+
+**反引号代码块**
+
+另一种形式的代码块，不同的是它使用三个反引号来包裹。
+
+``` [language] [title] [url] [link text] code snippet ```
+
+
+**Pull Quote**
+
+在文章中插入 Pull quote。
+```
+{% pullquote [class] %}
+content
+{% endpullquote %}
+```
+
+**jsFiddle**
+
+在文章中嵌入 jsFiddle。
+```
+{% jsfiddle shorttag [tabs] [skin] [width] [height] %}
+```
+
+**Gist**
+
+在文章中嵌入 Gist。
+
+```
+{% gist gist_id [filename] %}
+```
+
+**iframe**
+
+在文章中插入 iframe。
+
+```
+{% iframe url [width] [height] %}
+```
+
+**Image**
+
+在文章中插入指定大小的图片。
+
+```
+{% img [class names] /path/to/image [width] [height] [title text [alt text]] %}
+```
+
+**Link**
+
+在文章中插入链接，并自动给外部链接添加 target="_blank" 属性。
+```
+{% link text url [external] [title] %}
+```
+
+**Include Code**
+
+插入source文件夹内的代码文件。
+```
+{% include_code [title] [lang:language] path/to/file %}
+```
+
+**Youtube**
+
+在文章中插入 Youtube 视频。
+
+```
+{% youtube video_id %}
+```
+
+**Vimeo**
+
+在文章中插入 Vimeo 视频。
+
+```
+{% vimeo video_id %}
+```
+
+**引用文章**
+
+引用其他文章的链接。
+
+```
+{% post_path slug %}
+{% post_link slug [title] %}
+```
+
+**引用资源**
+
+引用文章的资源。
+```
+{% asset_path slug %}
+{% asset_img slug [title] %}
+{% asset_link slug [title] %}
+```
+
+**Raw**
+
+如果您想在文章中插入Swig标签，可以尝试使用Raw标签，以免发生解析异常。
+
+```
+{% raw %}
+content
+{% endraw %}
+```
+
+资源文件夹
+----------
+
+资源（Asset）代表source文件夹中除了文章以外的所有文件，例如图片、CSS、JS文件等。比方说，如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在source/images文件夹中。然后通过类似于```![](/images/image.jpg)```的方法访问它们。
+
+**文章资源文件夹**
+
+对于那些想要更有规律地提供图片和其他资源以及想要将他们的资源分布在各个文章上的人来说，Hexo也提供了更组织化的方式来管理资源。这个稍微有些复杂但是管理资源非常方便的功能可以通过将```config.yml```文件中的```post_asset_folder```选项设为true来打开。
+```
+_config.yml
+post_asset_folder: true
+```
+当资源文件管理功能打开后，Hexo将会在你每一次通过```hexo new [layout] <title>```
+命令创建新文章时自动创建一个文件夹。这个资源文件夹将会有与这个markdown文件一样的名字。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们，这样你就得到了一个更简单而且方便得多的工作流。
+
+**相对路径引用的标签插件**
+
+通过常规的markdown语法和相对路径来引用图片和其它资源可能会导致它们在存档页或者主页上显示不正确。在Hexo2时代，社区创建了很多插件来解决这个问题。但是，随着Hexo3的发布，许多新的标签插件被加入到了核心代码中。这使得你可以更简单地在文章中引用你的资源。
+```
+{% asset_path slug %}
+{% asset_img slug [title] %}
+{% asset_link slug [title] %}
+```
+比如说：当你打开文章资源文件夹功能后，你把一个example.jpg图片放在了你的资源文件夹中，如果通过使用相对路径的常规markdown语法```![](/example.jpg)``` ，它将不会出现在首页上。（但是它会在文章中按你期待的方式工作）
+
+正确的引用图片方式是使用下列的标签插件而不是markdown ：
+```
+{% asset_img example.jpg This is an example image %}
+```
+通过这种方式，图片将会同时出现在文章和主页以及归档页中。
+
+数据文件
+--------
+
+有时您可能需要在主题中使用某些资料，而这些资料并不在文章内，并且是需要重复使用的，那么您可以考虑使用Hexo3新增的「数据文件」功能。此功能会载入source/_data内的YAML或JSON文件，如此一来您便能在网站中复用这些文件了。
+
+举例来说，在 source/_data 文件夹中新建 menu.yml 文件：
+```
+Home: /
+Gallery: /gallery/
+Archives: /archives/
+```
+您就能在模板中使用这些资料：
+```
+{% for link in site.data.menu %}
+  <a href="{{ link }}">{{ loop.key }}</a>
+{% endfor %}
+```
+
+
+
+
