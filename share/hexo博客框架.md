@@ -260,8 +260,129 @@ npm install hexo-migrator-joomla --save
 hexo migrate joomla <source>
 ```
 
+写作
+----
+
+你可以执行下列命令来创建一篇新文章。
+```
+hexo new [layout] <title>
+```
+您可以在命令中指定文章的布局（layout），默认为post，可以通过修改```_config.yml```中的```default_layout```参数来指定默认布局。
 
 
+**布局（Layout）**
 
+Hexo有三种默认布局：post、page和draft，它们分别对应不同的路径，而您自定义的其他布局和post相同，都将储存到source/_posts文件夹。
 
+|布局|路径|
+|:---|----|
+|post|source/_posts|
+|page|source|
+|draft|source/_drafts|
 
+```
+不要处理我的文章：如果你不想你的文章被处理，你可以将Front-Matter中的layout:设为false。
+```
+
+**文件名称**
+
+Hexo默认以标题做为文件名称，但您可编辑```new_post_name```参数来改变默认的文件名称，举例来说，设为```:year-:month-:day-:title.md```可让您更方便的通过日期来管理文章。
+
+|变量|描述|
+|:---|----|
+|:title|标题（小写，空格将会被替换为短杠）|
+|:year|建立的年份，比如，2015|
+|:month|建立的月份（有前导零），比如，04|
+|:i_month|建立的月份（无前导零），比如，4|
+|:day|建立的日期（有前导零），比如，07|
+|:i_day|建立的日期（无前导零），比如，7|
+
+**草稿**
+
+刚刚提到了Hexo的一种特殊布局：draft，这种布局在建立时会被保存到```source/_drafts```文件夹，您可通过publish命令将草稿移动到```source/_posts```文件夹，该命令的使用方式与new十分类似，您也可在命令中指定layout来指定布局。
+```
+hexo publish [layout] <title>
+```
+草稿默认不会显示在页面中，您可在执行时加上--draft参数，或是把render_drafts参数设为true来预览草稿。
+
+**模版（Scaffold）**
+
+在新建文章时，Hexo会根据scaffolds文件夹内相对应的文件来建立文件，例如：
+```
+hexo new photo "My Gallery"
+```
+在执行这行指令时，Hexo会尝试在scaffolds 文件夹中寻找photo.md，并根据其内容建立文章，以下是您可以在模版中使用的变量：
+
+|变量|描述|
+|:---|----|
+|layout|布局|
+|title|标题|
+|date|文件建立日期|
+
+**Front-matter**
+
+Front-matter是文件最上方以---分隔的区域，用于指定个别文件的变量，举例来说：
+```
+title: Hello World
+date: 2013/7/13 20:46:25
+---
+```
+以下是预先定义的参数，您可在模板中使用这些参数值并加以利用。
+
+|参数|描述|默认值|
+|:---|----|------|
+|layout|布局||	
+|title|标题||	
+|date|建立日期|文件建立日期|
+|updated|更新日期|文件更新日期|
+|comments|开启文章的评论功能|true|
+|tags|标签（不适用于分页）||
+|categories|分类（不适用于分页）||	
+|permalink|覆盖文章网址||
+
+**分类和标签**
+
+只有文章支持分类和标签，您可以在Front-matter中设置。在其他系统中，分类和标签听起来很接近，但是在Hexo中两者有着明显的差别：分类具有顺序性和层次性，也就是说Foo,Bar不等于Bar,Foo；而标签没有顺序和层次。
+
+```
+categories:
+- Diary
+tags:
+- PS3
+- Games
+```
+
+**JSON Front-matter**
+
+除了YAML外，你也可以使用JSON来编写Front-matter，只要将 --- 代换成 ;;; 即可。
+```
+"title": "Hello World",
+"date": "2013/7/13 20:46:25"
+;;;
+```
+
+标签插件（Tag Plugins）
+----------------------
+
+标签插件和Front-matter中的标签不同，它们是用于在文章中快速插入特定内容的插件。
+
+**引用块**
+
+在文章中插入引言，可包含作者、来源和标题。
+
+别号：quote
+
+```
+{% blockquote [author[, source]] [link] [source_link_title] %}
+content
+{% endblockquote %}
+```
+
+样例：没有提供参数，则只输出普通的 blockquote
+```
+{% blockquote %}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.
+{% endblockquote %}
+```
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.
