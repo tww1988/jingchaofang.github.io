@@ -395,5 +395,5 @@ Do not just seek happiness for yourself. Seek happiness for all. Through kindnes
 {% endblockquote %}
 ```
 
-> > Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
-> > David LevithanWide Awake
+> Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy. 
+** David Levithan** —— Wide Awake
