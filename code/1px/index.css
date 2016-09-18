@@ -34,19 +34,19 @@
     }
 }
 .border-1px.border-all:after {
-    border: 1px solid #1f316e;
+    border: 1px solid #146e08;
 }
 .border-1px.border-top:after {
-    border-top: 1px solid #1f316e;
+    border-top: 1px solid #146e08;
 }
 .border-1px.border-bottom:after {
-    border-bottom: 1px solid #1f316e;
+    border-bottom: 1px solid #146e08;
 }
 .border-1px.border-left:after {
-    border-left: 1px solid #1f316e;
+    border-left: 1px solid #146e08;
 }
 .border-1px.border-right:after {
-    border-right: 1px solid #1f316e;
+    border-right: 1px solid #146e08;
 }
 
 
