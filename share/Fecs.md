@@ -54,7 +54,9 @@ fecs dir1 --type=js 只检查js文件
 ```
 
 ```
-fecs format 发布到ouput、fecs format --replace 覆盖当前
+fecs format 发布到ouput
+
+fecs format --replace 覆盖当前
 ```
 
 ```
