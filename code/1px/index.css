@@ -1,0 +1,82 @@
+.demo-borders {
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+.demo-borders li {
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;
+}
+
+
+
+.border-1px {
+    position: relative;
+}
+.border-1px:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: scale(1);
+    pointer-events: none;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .border-1px:after {
+        right: -100%;
+        bottom: -100%;
+        -webkit-transform: scale(0.5);
+    }
+}
+.border-1px.border-all:after {
+    border: 1px solid #dedfe0;
+}
+.border-1px.border-top:after {
+    border-top: 1px solid #dedfe0;
+}
+.border-1px.border-bottom:after {
+    border-bottom: 1px solid #dedfe0;
+}
+.border-1px.border-left:after {
+    border-left: 1px solid #dedfe0;
+}
+.border-1px.border-right:after {
+    border-right: 1px solid #dedfe0;
+}
+
+
+/*svg背景图无法实现全边框，而且下面代码放css文件外联有坑，border-left显示不出来*/
+
+/*
+.border-left {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1px' height='100%'><rect fill='#ce1126' x='0.64px' y='0' width='0.36px' height='100%'/></svg>");
+    background-repeat: repeat-y;
+    background-position: bottom left;
+    background-size: 1px 100%;
+}
+.border-top {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1px'><rect fill='#ce1126' x='0' y='0.64px' width='100%' height='0.36px'/></svg>");
+    background-repeat: repeat-x;
+    background-position: top left;
+    background-size: 100% 1px;
+}
+
+.border-bottom {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1px'><rect fill='#ce1126' x='0' y='0.64px' width='100%' height='0.36px'/></svg>");
+    background-repeat: repeat-x;
+    background-position: bottom left;
+    background-size: 100% 1px;
+}
+
+.border-right {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1px' height='100%'><rect fill='#ce1126' x='0.64px' y='0' width='0.36px' height='100%'/></svg>");
+    background-repeat: repeat-y;
+    background-position: top right;
+    background-size: 1px 100%;
+}
+*/

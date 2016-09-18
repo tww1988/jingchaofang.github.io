@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>1px</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+    /*以下代码需内联，详情见index.css说明*/
+    .border-left {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1px' height='100%'><rect fill='#ce1126' x='0.64px' y='0' width='0.36px' height='100%'/></svg>");
+        background-repeat: repeat-y;
+        background-position: bottom left;
+        background-size: 1px 100%;
+    }
+    
+    .border-top {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1px'><rect fill='#ce1126' x='0' y='0.64px' width='100%' height='0.36px'/></svg>");
+        background-repeat: repeat-x;
+        background-position: top left;
+        background-size: 100% 1px;
+    }
+    
+    .border-bottom {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1px'><rect fill='#ce1126' x='0' y='0.64px' width='100%' height='0.36px'/></svg>");
+        background-repeat: repeat-x;
+        background-position: bottom left;
+        background-size: 100% 1px;
+    }
+    
+    .border-right {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1px' height='100%'><rect fill='#ce1126' x='0.64px' y='0' width='0.36px' height='100%'/></svg>");
+        background-repeat: repeat-y;
+        background-position: top right;
+        background-size: 1px 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <ul class="demo-borders">
+        <li>
+            <div class="border-1px border-all">全边框</div>
+        </li>
+        <li>
+            <div class="border-1px border-top">上边框</div>
+        </li>
+        <li>
+            <div class="border-1px border-bottom">下边框</div>
+        </li>
+        <li>
+            <div class="border-1px border-left">左边框</div>
+        </li>
+        <li>
+            <div class="border-1px border-right">右边框</div>
+        </li>
+    </ul>
+</body>
+
+</html>
