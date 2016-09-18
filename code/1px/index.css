@@ -13,7 +13,7 @@
     margin-top: 10px;
 }
 
-/*transform缩放实现*/
+/*transform缩放实现http://alloyteam.github.io/JMUI/demo/base-1px.html*/
 
 /*
 .border-1px {
@@ -55,7 +55,7 @@
 }
 */
 
-/*svg背景图无法实现全边框，而且下面代码放css文件外联有坑，border-left显示不出来*/
+/*svg背景图无法实现全边框，而且下面代码不能放css外联文件（border-left显示不出来）*/
 
 /*
 .border-left {
