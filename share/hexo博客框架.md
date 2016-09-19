@@ -609,6 +609,513 @@ Archives: /archives/
 {% endfor %}
 ```
 
+服务器
+------
+
+Hexo 3.0 把服务器独立成了个别模块，您必须先安装hexo-server才能使用。
+```
+npm install hexo-server --save
+```
+安装完成后，输入以下命令以启动服务器，您的网站会在http://localhost:4000下启动。在服务器启动期间，Hexo会监视文件变动并自动更新，您无须重启服务器。
+```
+hexo server
+```
+如果您想要更改端口，或是在执行时遇到了EADDRINUSE错误，可以在执行时使用-p选项指定其他端口，如下：
+```
+hexo server -p 5000
+```
+
+**静态模式**
+
+在静态模式下，服务器只处理public文件夹内的文件，而不会处理文件变动，在执行时，您应该先自行执行```hexo generate```，此模式通常用于生产环境（production mode）下。
+
+```
+hexo server -s
+```
+
+**自定义IP**
+
+服务器默认运行在0.0.0.0，您可以覆盖默认的IP设置，如下：
+```
+hexo server -i 192.168.1.1
+```
+
+**Pow**
+
+Pow是一个Mac系统上的零配置Rack服务器，它也可以作为一个简单易用的静态文件服务器来使用。
+
+安装： ```curl get.pow.cx | sh```
+
+设置：在 ~/.pow文件夹建立链接（symlink）。
+```
+cd ~/.pow
+ln -s /path/to/myapp
+```
+您的网站将会在http://myapp.dev 下运行，网址根据链接名称而定。
+
+生成文件
+--------
+
+使用Hexo生成静态文件快速而且简单。
+```
+hexo generate
+```
+
+**监视文件变动**
+
+Hexo能够监视文件变动并立即重新生成静态文件，在生成时会比对文件的SHA1 checksum，只有变动的文件才会写入。
+```
+hexo generate --watch
+```
+
+**完成后部署**
+
+您可执行下列的其中一个命令，让Hexo在生成完毕后自动部署网站，两个命令的作用是相同的。
+```
+hexo generate --deploy
+hexo deploy --generate
+```
+
+部署
+-----
+
+Hexo提供了快速方便的一键部署功能，让您只需一条命令就能将网站部署到服务器上。
+```
+hexo deploy
+```
+在开始之前，您必须先在_config.yml中修改参数，一个正确的部署配置中至少要有type 参数，例如：
+```
+deploy:
+  type: git
+```
+您可同时使用多个deployer，Hexo会依照顺序执行每个deployer。
+```
+deploy:
+- type: git
+  repo:
+- type: heroku
+  repo:
+```
+
+**Git**
+
+安装hexo-deployer-git。
+```
+npm install hexo-deployer-git --save
+```
+修改配置。
+```
+deploy:
+  type: git
+  repo: <repository url>
+  branch: [branch]
+  message: [message]
+```
+
+|参数|描述|
+|:---|----|
+|repo|库（Repository）地址|
+|branch|分支名称。如果您使用的是GitHub或GitCafe的话，程序会尝试自动检测。|
+|message|自定义提交信息 (默认为 Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }})|
+
+**Heroku**
+
+安装hexo-deployer-heroku。
+```
+npm install hexo-deployer-heroku --save
+```
+修改配置。
+```
+deploy:
+  type: heroku
+  repo: <repository url>
+  message: [message]
+```
+
+|参数|描述|
+|repo|Heroku库（Repository）地址|
+|message|自定提交信息 (默认为 Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }})|
 
 
+**Rsync**
 
+安装hexo-deployer-rsync。
+```
+npm install hexo-deployer-rsync --save
+```
+修改配置。
+```
+deploy:
+  type: rsync
+  host: <host>
+  user: <user>
+  root: <root>
+  port: [port]
+  delete: [true|false]
+  verbose: [true|false]
+  ignore_errors: [true|false]
+```
+
+|参数|描述|默认值|
+|:---|----|------|
+|host|远程主机的地址||	
+|user|使用者名称||	
+|root|远程主机的根目录||	
+|port|端口|22|
+|delete|删除远程主机上的旧文件|true|
+|verbose|显示调试信息|true|
+|ignore_errors|忽略错误|false|
+
+**OpenShift**
+
+安装 hexo-deployer-openshift。
+```
+npm install hexo-deployer-openshift --save
+```
+修改配置。
+```
+deploy:
+  type: openshift
+  repo: <repository url>
+  message: [message]
+```
+
+|参数|描述|
+|:---|----|
+|repo|OpenShift 库（Repository）地址|
+|message|自定提交信息 (默认为 Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }})|
+
+**FTPSync**
+
+安装hexo-deployer-ftpsync。
+```
+npm install hexo-deployer-ftpsync --save
+```
+修改配置。
+```
+deploy:
+  type: ftpsync
+  host: <host>
+  user: <user>
+  pass: <password>
+  remote: [remote]
+  port: [port]
+  ignore: [ignore]
+  connections: [connections]
+  verbose: [true|false]
+```
+
+|参数|描述|默认值|
+|:---|----|------|
+|host|远程主机的地址||
+|user|使用者名称||
+|pass|密码||	
+|remote|远程主机的根目录|/|
+|port|端口|21|
+|ignore|忽略的文件或目录||
+|connections|使用的连接数|1|
+|verbose|显示调试信息|false|
+
+**其他方法**
+
+Hexo生成的所有文件都放在public文件夹中，您可以将它们复制到您喜欢的地方。
+
+
+永久链接（Permalinks）
+---------------------
+
+您可以在_config.yml配置中调整网站的永久链接或者在每篇文章的Front-matter中指定。
+
+**变量**
+
+除了下列变量外，您还可使用Front-matter中的所有属性。
+
+|变量|描述|
+|:---|----|
+|:year|文章的发表年份（4 位数）|
+|:month|文章的发表月份（2 位数）|
+|:i_month|文章的发表月份（去掉开头的零）|
+|:day|文章的发表日期（2 位数）|
+|:i_day|文章的发表日期（去掉开头的零）|
+|:title|文件名称|
+|:id|文章ID|
+|:category|分类。如果文章没有分类，则是 default_category 配置信息。|
+
+您可在permalink_defaults参数下调整永久链接中各变量的默认值：
+```
+permalink_defaults:
+  lang: en
+```
+
+**示例**
+
+假设source/_posts文件夹中有个hello-world.md，包含以下内容：
+```
+title: Hello World
+date: 2013-07-14 17:01:34
+categories:
+- foo
+- bar
+```
+
+|参数|结果|
+|:---|----|
+|:year/:month/:day/:title/|2013/07/14/hello-world|
+|:year-:month-:day-:title.html|2013-07-14-hello-world.html|
+|:category/:title|foo/bar/hello-world|
+
+**多语种支持**
+
+若要建立一个多语种的网站，您可修改```new_post_name```和```permalink```参数，如下：
+```
+new_post_name: :lang/:title.md
+permalink: :lang/:title/
+```
+当您建立新文章时，文章会被储存到：
+```
+$ hexo new "Hello World" --lang tw
+# => source/_posts/tw/Hello-World.md
+```
+而网址会是：
+```
+http://localhost:4000/tw/hello-world/
+```
+
+主题
+----
+
+创建Hexo主题非常容易，您只要在themes文件夹内，新增一个任意名称的文件夹，并修改_config.yml内的theme设定，即可切换主题。一个主题可能会有以下的结构：
+```
+.
+├── _config.yml
+├── languages
+├── layout
+├── scripts
+└── source
+```
+
+_config.yml 主题的配置文件。修改时会自动更新，无需重启服务器。
+
+languages 语言文件夹。请参见国际化(i18n)。
+
+layout 布局文件夹。用于存放主题的模板文件，决定了网站内容的呈现方式，Hexo内建Swig模板引擎，您可以另外安装插件来获得EJS、Haml或Jade支持，Hexo根据模板文件的扩展名来决定所使用的模板引擎，例如：
+```
+layout.ejs   - 使用 EJS
+layout.swig  - 使用 Swig
+```
+您可参考模板以获得更多信息。
+
+scripts 脚本文件夹。在启动时，Hexo 会载入此文件夹内的JavaScript文件，请参见插件以获得更多信息。
+
+source 资源文件夹，除了模板以外的Asset，例如CSS、JavaScript文件等，都应该放在这个文件夹中。文件或文件夹开头名称为_（下划线线）或隐藏的文件会被忽略。
+
+如果文件可以被渲染的话，会经过解析然后储存到public文件夹，否则会直接拷贝到public文件夹。
+
+**发布**
+
+当您完成主题后，可以考虑将它发布到[主题列表](https://hexo.io/themes)，让更多人能够使用您的主题。在发布前建议先进行[主题单元测试](https://github.com/hexojs/hexo-theme-unit-test)，确保每一项功能都能正常使用。发布主题的步骤和更新文档非常类似。
+
+1. Fork hexojs/site
+2. 把库（repository）复制到电脑上，并安装所依赖的插件。
+```
+git clone https://github.com/<username>/site.git
+cd site
+npm install
+```
+3. 编辑source/_data/themes.yml，在文件中新增您的主题，例如：
+```
+- name: landscape
+  description: A brand new default theme for Hexo.
+  link: https://github.com/hexojs/hexo-theme-landscape
+  preview: http://hexo.io/hexo-theme-landscape
+  tags:
+    - official
+    - responsive
+    - widget
+    - two_column
+    - one_column
+```
+4. 在source/themes/screenshots新增同名的截图档案，图片必须为800x500的PNG文件。
+5. 推送（push）分支。
+6. 建立一个新的合并申请（pull request）并描述改动。
+
+模版
+----
+
+模板决定了网站内容的呈现方式，每个主题至少都应包含一个index模板，以下是各页面相对应的模板名称：
+
+|模板|用途|回调|
+|:---|----|----|
+|index|首页||
+|post|文章|index|
+|page|分页|index|
+|archive|归档|index|
+|category|分类归档|archive|
+|tag|标签归档|archive|
+
+**布局（Layout）**
+
+如果页面结构类似，例如两个模板都有页首（Header）和页脚（Footer），您可考虑通过布局让两个模板共享相同的结构。一个布局文件必须要能显示body 变量的内容，如此一来模板的内容才会被显示，举例来说：
+```
+index.ejs
+index
+```
+```
+layout.ejs
+<!DOCTYPE html>
+<html>
+  <body><%- body %></body>
+</html>
+```
+生成：
+```
+<!DOCTYPE html>
+<html>
+  <body>index</body>
+</html>
+```
+每个模板都默认使用layout布局，您可在front-matter指定其他布局，或是设为false来关闭布局功能，您甚至可在布局中再使用其他布局来建立嵌套布局。
+
+**局部模版（Partial）**
+
+局部模板让您在不同模板之间共享相同的组件，例如页首（Header）、页脚（Footer）或侧边栏（Sidebar）等，可利用局部模板功能分割为个别文件，让维护更加便利。举例来说：
+```
+partial/header.ejs
+<h1 id="logo"><%= config.title %></h1>
+```
+```
+index.ejs
+<%- partial('partial/header') %>
+<div id="content">Home page</div>
+```
+生成：
+```
+<h1 id="logo">My Site</h1>
+<div id="content">Home page</div>
+```
+
+局部变量：您可以在局部模板中指定局部变量并使用。
+```
+partial/header.ejs
+<h1 id="logo"><%= title></h1>
+```
+```
+index.ejs
+<%- partial('partial/header', {title: 'Hello World'}) %>
+<div id="content">Home page</div>
+```
+生成：
+```
+<h1 id="logo">Hello World</h1>
+<div id="content">Home page</div>
+```
+
+**优化**
+
+如果您的主题太过于复杂，或是需要生成的文件量太过于庞大，可能会大幅降低性能，除了简化主题外，您可以考虑Hexo 2.7新增的局部缓存（Fragment Caching）功能。
+
+本功能借鉴于Ruby on Rails，它储存局部内容，下次便能直接使用缓存内容，可以减少文件夹查询并使生成速度更快。
+
+它可用于页首、页脚、侧边栏等文件不常变动的位置，举例来说：
+```
+<%- fragment_cache('header', function(){
+  return '<header></header>';
+});
+```
+如果您使用局部模板的话，可以更简单：
+```
+<%- partial('header', {}, {cache: true});
+```
+但是，如果您开启了relative_link参数的话，请勿使用局部缓存功能，因为相对链接在每个页面可能不同。
+
+变量
+-----
+
+**全局变量**
+
+|变量|描述|
+|:---|----|
+|site|网站变量|
+|page|针对该页面的内容以及 front-matter 所设定的变量。|
+|config|网站配置|
+|theme|主题配置。继承自网站配置。|
+|_ (单下划线)|[Lodash](https://lodash.com/)函数库|
+|path|当前页面的路径（不含根路径）|
+|url|当前页面的完整网址|
+|env|环境变量|
+
+**网站变量**
+
+|变量|描述|
+|:---|----|
+|site.posts|所有文章|
+|site.pages|所有分页|
+|site.categories|所有分类|
+|site.tags|所有标签|
+
+**页面变量**
+
+页面（page）
+
+|变量|描述|
+|:---|----|
+|page.title|页面标题|
+|page.date|页面建立日期（Moment.js 对象）|
+|page.updated|页面更新日期（Moment.js 对象）|
+|page.comments|留言是否开启|
+|page.layout|布局名称|
+|page.content|页面的完整内容|
+|page.excerpt|页面摘要|
+|page.more|除了页面摘要的其余内容|
+|page.source|页面原始路径|
+|page.full_source|页面的完整原始路径|
+|page.path|页面网址（不含根路径）。我们通常在主题中使用 url_for(page.path)。|
+|page.permalink|页面的完整网址|
+|page.prev|上一个页面。如果此为第一个页面则为 null。|
+|page.next|下一个页面。如果此为最后一个页面则为 null。|
+|page.raw|文章的原始内容|
+|page.photos|文章的照片（用于相簿）|
+|page.link|文章的外部链接（用于链接文章）|
+
+文章 (post):和page布局类似，但是添加了下列变量。
+
+|Variable|Description|
+|:-------|-----------|
+|page.published|如果该文章已发布则为True|
+|page.categories|该文章的所有分类|
+|page.tags|该文章的所有标签|
+
+**首页（index）**
+
+|变量|描述|
+|:---|----|
+|page.per_page|每页显示的文章数量|
+|page.total|总文章数|
+|page.current|目前页数|
+|page.current_url|目前分页的网址|
+|page.posts|本页文章|
+|page.prev|上一页的页数。如果此页是第一页的话则为 0。|
+|page.prev_link|上一页的网址。如果此页是第一页的话则为 ''。|
+|page.next|下一页的页数。如果此页是最后一页的话则为 0。|
+|page.next_link|下一页的网址。如果此页是最后一页的话则为 ''。|
+|page.path|当前页面的路径（不含根目录）。我们通常在主题中使用 url_for(page.path)。|
+
+归档 (archive)：与index布局相同，但新增以下变量。
+
+|变量|描述|
+|:---|----|
+|page.archive|等于 true|
+|page.year|年份归档 (4位)|
+|page.month|月份归档 (没有前导零的2位数)|
+
+分类 (category)：与index布局相同，但新增以下变量。
+
+|变量|描述|
+|:---|----|
+|page.category|分类名称|
+
+标签 (tag)：与index布局相同，但新增以下变量。
+
+|变量|描述|
+|:---|----|
+|page.tag|标签名称|
