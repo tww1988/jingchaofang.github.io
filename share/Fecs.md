@@ -30,7 +30,7 @@ mac下的配置文件
 
 ```
 
-点击圆点之后，具体的warning信息会显示在底部的状态栏，如果错误信息太多，状态栏显示不全的话，可以通过Ctrl+~调用SublimeText的Console，里面有更详细的信息。```TODO：windows下sublimetext无法调出更详细信息```
+点击圆点之后，具体的warning信息会显示在底部的状态栏，如果错误信息太多，状态栏显示不全的话，可以通过Ctrl+~调用SublimeText的Console，里面有更详细的信息。```TODO：windows下sublimetext无法调出更详细信息，sublimetext使用该插件经常报错```
 
 安装使用
 --------
