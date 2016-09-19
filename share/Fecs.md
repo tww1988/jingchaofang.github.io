@@ -30,7 +30,7 @@ mac下的配置文件
 
 ```
 
-点击圆点之后，具体的warning信息会显示在底部的状态栏，如果错误信息太多，状态栏显示不全的话，可以通过Ctrl+~调用SublimeText的Console，里面有更详细的信息。```TODO：windows下sublimetext无法调出更详细信息```
+点击圆点之后，具体的warning信息会显示在底部的状态栏，如果错误信息太多，状态栏显示不全的话，可以通过Ctrl+~调用SublimeText的Console，里面有更详细的信息。```TODO：windows下sublimetext无法调出更详细信息，sublimetext使用该插件经常报错```
 
 安装使用
 --------
@@ -54,9 +54,9 @@ fecs dir1 --type=js 只检查js文件
 ```
 
 ```
-fecs format 发布到ouput
+fecs format 默认发布到ouput新目录
 
-fecs format --replace 覆盖当前
+fecs format --replace 覆盖当前文件
 ```
 
 ```
@@ -68,9 +68,12 @@ fecs --reporter=baidu 显示为百度中文规范提示，默认显示英文提�
 忽略规则
 -------
 
-使用.fecsignore文件配置，fecs check file 优先级最高忽略改规则文件。
+使用.fecsignore文件配置，但是fecs check file 优先级最高会忽略该规则文件。
 
+使用指令忽略具体文件
+```
 fecs --ignore='test.js'
+```
 
 编程规范
 --------
