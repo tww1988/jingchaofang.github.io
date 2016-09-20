@@ -1119,3 +1119,320 @@ index.ejs
 |变量|描述|
 |:---|----|
 |page.tag|标签名称|
+
+
+辅助函数（Helpers）
+-----------------
+
+辅助函数帮助您在模版中快速插入内容。辅助函数不能在源文件中使用。
+
+**网址**
+
+url_for：在路径前加上根路径，从 Hexo 2.7 开始您应该使用此函数而不是 config.root + path。
+```
+<%- url_for(path) %>
+```
+relative_url：取得与from相对的to路径。
+```
+<%- relative_url(from, to) %>
+```
+
+gravatar：插入Gravatar图片。
+
+如果你不指定options参数，将会应用默认参数。否则，你可以将其设置为一个数字，这个数字将会作为Gravatar的大小参数。最后，如果你设置它一个对象，它将会被转换为Gravatar的一个查询字符串参数。
+````
+<%- gravatar(email, [options]);
+```
+示例：
+```
+<%- gravatar('a@abc.com') %>
+// http://www.gravatar.com/avatar/b9b00e66c6b8a70f88c73cb6bdb06787
+<%- gravatar('a@abc.com', 40) %>
+// http://www.gravatar.com/avatar/b9b00e66c6b8a70f88c73cb6bdb06787?s=40
+<%- gravatar('a@abc.com' {s: 40, d: 'http://example.com/image.png'}) %>
+// http://www.gravatar.com/avatar/b9b00e66c6b8a70f88c73cb6bdb06787?s=40&d=http%3A%2F%2Fexample.com%2Fimage.png
+```
+
+**HTML标签**
+
+css：载入CSS文件。path可以是数组或字符串，如果path开头不是/或任何协议，则会自动加上根路径；如果后面没有加上.css扩展名的话，也会自动加上。
+```
+<%- css(path, ...) %>
+```
+示例：
+```
+<%- css('style.css') %>
+// <link rel="stylesheet" href="/style.css" type="text/css">
+<%- css(['style.css', 'screen.css']) %>
+// <link rel="stylesheet" href="/style.css" type="text/css">
+// <link rel="stylesheet" href="/screen.css" type="text/css">
+```
+
+js：载入JavaScript文件。path可以是数组或字符串，如果path开头不是/或任何协议，则会自动加上根路径；如果后面没有加上.js扩展名的话，也会自动加上。
+```
+<%- js(path, ...) %>
+```
+示例：
+```
+<%- js('script.js') %>
+// <script type="text/javascript" src="/script.js"></script>
+<%- js(['script.js', 'gallery.js']) %>
+// <script type="text/javascript" src="/script.js"></script>
+// <script type="text/javascript" src="/gallery.js"></script>
+```
+
+link_to：插入链接。
+```
+<%- link_to(path, [text], [options]) %>
+```
+|参数|描述|默认值|
+|:---|----|------|
+|external|在新视窗打开链接|false|
+|class|Class名称||	
+|id|ID||	
+
+示例：
+```
+<%- link_to('http://www.google.com') %>
+// <a href="http://www.google.com" title="http://www.google.com">http://www.google.com</a>
+<%- link_to('http://www.google.com', 'Google') %>
+// <a href="http://www.google.com" title="Google">Google</a>
+<%- link_to('http://www.google.com', 'Google', {external: true}) %>
+// <a href="http://www.google.com" title="Google" target="_blank" rel="external">Google</a>
+```
+
+mail_to：插入电子邮箱链接。
+```
+<%- mail_to(path, [text], [options]) %>
+```
+|参数|描述|
+|:---|----|
+|class|Class名称|
+|id|ID|
+|subject|邮件主题|
+|cc|抄送（CC）|
+|bcc|密送（BCC）|
+|body|邮件内容|
+
+示例：
+```
+<%- mail_to('a@abc.com') %>
+// <a href="mailto:a@abc.com" title="a@abc.com">a@abc.com</a>
+<%- mail_to('a@abc.com', 'Email') %>
+// <a href="mailto:a@abc.com" title="Email">Email</a>
+```
+
+image_tag：插入图片。
+```
+<%- image_tag(path, [options]) %>
+```
+|参数|描述|
+|alt|图片的替代文字|
+|class|Class名称|
+|id|ID|
+|width|图片宽度|
+|height|图片高度|
+
+favicon_tag：插入 favicon。
+```
+<%- favicon_tag(path) %>
+```
+
+feed_tag：插入 feed 链接。
+```
+<%- feed_tag(path, [options]) %>
+```
+|参数|描述|默认值|
+|title|Feed 标题||	
+|type|Feed 类型|atom|
+
+**条件函数**
+
+is_current：检查path是否符合目前页面的网址。开启strict选项启用严格比对。
+```
+<%- is_current(path, [strict]) %>
+```
+is_home 检查目前是否为首页。
+```
+<%- is_home() %>
+```
+is_post 检查目前是否为文章。
+```
+<%- is_post() %>
+```
+is_archive 检查目前是否为存档页面。
+```
+<%- is_archive() %>
+```
+is_year 检查目前是否为年度归档页面。
+```
+<%- is_year() %>
+```
+is_month 检查目前是否为月度归档页面。
+```
+<%- is_month() %>
+```
+is_category 检查目前是否为分类归档页面。
+
+如果给定一个字符串作为参数，将会检查目前是否为指定分类。
+```
+<%- is_category() %>
+<%- is_category('hobby') %>
+```
+is_tag 检查目前是否为标签归档页面。
+
+如果给定一个字符串作为参数，将会检查目前是否为指定标签。
+```
+<%- is_tag() %>
+<%- is_tag('hobby') %>
+```
+
+**字符串处理**
+
+trim 清除字符串开头和结尾的空格。
+```
+<%- trim(string) %>
+```
+strip_html 清除字符串中的HTML标签。
+```
+<%- strip_html(string) %>
+```
+示例：
+```
+<%- strip_html('It's not <b>important</b> anymore!') %>
+// It's not important anymore!
+```
+titlecase 把字符串转换为正确的 Title case。
+```
+<%- titlecase(string) %>
+```
+示例：
+```
+<%- titlecase('this is an apple') %>
+# This is an Apple
+```
+markdown 使用Markdown解析字符串。
+```
+<%- markdown(str) %>
+```
+示例：
+```
+<%- markdown('make me **strong**') %>
+// make me <strong>strong</strong>
+```
+render 解析字符串。
+```
+<%- render(str, engine, [options]) %>
+```
+word_wrap 使每行的字符串长度不超过length。length预设为80。
+```
+<%- word_wrap(str, [length]) %>
+```
+示例：
+```
+<%- word_wrap('Once upon a time', 8) %>
+// Once upon\n a time
+```
+truncate 移除超过 length 长度的字符串。
+```
+<%- truncate(text, length) %>
+```
+示例：
+```
+<%- truncate('Once upon a time in a world far far away', {length: 17}) %>
+// Once upon a ti...
+<%- truncate('Once upon a time in a world far far away', {length: 17, separator: ' '}) %>
+// Once upon a...
+<%- truncate('And they found that many people were sleeping better.', {length: 25, omission: '... (continued)'}) %>
+// And they f... (continued)
+```
+
+**模板**
+
+partial 载入其他模板文件，您可在locals设定区域变量。
+```
+<%- partial(layout, [locals], [options]) %>
+```
+|参数|描述|默认值|
+|:---|----|------|
+|cache|缓存（使用Fragment cache）|false|
+|only|限制局部变量。在模板中只能使用locals中设定的变量。|false|
+
+fragment_cache 局部缓存。它储存局部内容，下次使用时就能直接使用缓存。
+```
+<%- fragment_cache(id, fn);
+```
+示例：
+```
+<%- fragment_cache('header', function(){
+  return '<header></header>';
+}) %>
+```
+
+**日期与时间**
+
+date 插入格式化的日期。date可以是UNIX时间、ISO字符串、Date对象或Moment.js对象。format默认为date_format配置信息。
+```
+<%- date(date, [format]) %>
+```
+示例：
+```
+<%- date(Date.now()) %>
+// 2013-01-01
+<%- date(Date.now(), 'YYYY/M/D') %>
+// Jan 1 2013
+```
+
+date_xml 插入XML格式的日期。date可以是UNIX时间、ISO 字符串、Date对象或Moment.js对象。
+```
+<%- date_xml(date) %>
+```
+示例：
+```
+<%- date_xml(Date.now()) %>
+// 2013-01-01T00:00:00.000Z
+```
+
+time 插入格式化的时间。date可以是UNIX时间、ISO字符串、Date对象或Moment.js对象。format默认为time_format配置信息。
+```
+<%- time(date, [format]) %>
+```
+示例：
+```
+<%- time(Date.now()) %>
+// 13:05:12
+<%- time(Date.now(), 'h:mm:ss a') %>
+// 1:05:12 pm
+```
+
+```full_date```插入格式化的日期和时间。date可以是UNIX 时间、ISO字符串、Date对象或Moment.js对象。format默认为```date_format + time_format```。
+```
+<%- full_date(date, [format]) %>
+```
+示例：
+```
+<%- full_date(new Date()) %>
+// Jan 1, 2013 0:00:00
+<%- full_date(new Date(), 'dddd, MMMM Do YYYY, h:mm:ss a') %>
+// Tuesday, January 1st 2013, 12:00:00 am
+```
+moment [Moment.js](http://momentjs.com/)函数库。
+
+**列表**
+
+list_categories 插入分类列表。
+```
+<%- list_categories([options]) %>
+```
+
+|参数|描述|默认值|
+|:---|----|------|
+|orderby|分类排列方式|name|
+|order|分类排列顺序。1, asc 升序；-1, desc 降序。|1|
+|show_count|显示每个分类的文章总数|true|
+|style|分类列表的显示方式。使用list以无序列表（unordered list）方式显示。|list|
+|separator|分类间的分隔符号。只有在style不是list时有用。|	,|
+|depth|要显示的分类层级。0显示所有层级的分类；-1和0很类似，但是显示不分层级；1只显示第一层的分类。|0|
+|class|分类列表的class名称。|category|
+|transform|改变分类名称显示方法的函数||
+
