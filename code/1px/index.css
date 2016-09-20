@@ -51,23 +51,23 @@
 }
 
 .border-1px.border-all:after {
-    border: 1px solid #146e08;
+    border: 1px solid #e2e2e2;
 }
 
 .border-1px.border-top:after {
-    border-top: 1px solid #146e08;
+    border-top: 1px solid #e2e2e2;
 }
 
 .border-1px.border-bottom:after {
-    border-bottom: 1px solid #146e08;
+    border-bottom: 1px solid #e2e2e2;
 }
 
 .border-1px.border-left:after {
-    border-left: 1px solid #146e08;
+    border-left: 1px solid #e2e2e2;
 }
 
 .border-1px.border-right:after {
-    border-right: 1px solid #146e08;
+    border-right: 1px solid #e2e2e2;
 }
 
 
