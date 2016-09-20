@@ -42,6 +42,14 @@
     }
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    .border-1px:after {
+        right: -200%;
+        bottom: -200%;
+        -webkit-transform: scale(0.333333);
+    }
+}
+
 .border-1px.border-all:after {
     border: 1px solid #146e08;
 }
